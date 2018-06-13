@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641275, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -214,6 +214,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &447139754
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898940359870640, guid: c331e718b688f4295a2bdf4b17002d70,
+        type: 2}
+      propertyPath: _previousBoundary
+      value: 
+      objectReference: {fileID: 87955815}
+    - target: {fileID: 1269461385080098, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_Name
+      value: BoidFish (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &563883545
 Prefab:
   m_ObjectHideFlags: 0
@@ -297,6 +348,57 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 22.186, y: 71.048004, z: 0}
+--- !u!1001 &703316811
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898940359870640, guid: c331e718b688f4295a2bdf4b17002d70,
+        type: 2}
+      propertyPath: _previousBoundary
+      value: 
+      objectReference: {fileID: 87955815}
+    - target: {fileID: 1269461385080098, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_Name
+      value: BoidFish (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &832582853
 GameObject:
   m_ObjectHideFlags: 0
@@ -325,7 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxFlockSize: 10
-  _speed: 0.3
+  _speed: 0.7
   _cohesion: 1
   _alignment: 1
   _separation: 3
@@ -486,6 +588,108 @@ Transform:
   m_Father: {fileID: 583173289}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1677563053
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898940359870640, guid: c331e718b688f4295a2bdf4b17002d70,
+        type: 2}
+      propertyPath: _previousBoundary
+      value: 
+      objectReference: {fileID: 87955815}
+    - target: {fileID: 1269461385080098, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_Name
+      value: BoidFish (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1745413828
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4467317192360114, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898940359870640, guid: c331e718b688f4295a2bdf4b17002d70,
+        type: 2}
+      propertyPath: _previousBoundary
+      value: 
+      objectReference: {fileID: 87955815}
+    - target: {fileID: 1269461385080098, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+      propertyPath: m_Name
+      value: BoidFish (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c331e718b688f4295a2bdf4b17002d70, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2031507223
 GameObject:
   m_ObjectHideFlags: 0

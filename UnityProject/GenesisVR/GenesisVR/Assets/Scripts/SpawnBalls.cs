@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoundInput;
 
 public class SpawnBalls : MonoBehaviour {
 
@@ -51,7 +52,7 @@ public class SpawnBalls : MonoBehaviour {
 
     //microphone variables
 	[Header("Mic Options")]
-	public GameObject MicManager;
+	public SoundInputController SIC;
 	public float _minPitch;
 	public float _maxPitch;
 	public float _maxRegisteredAmplitude;
@@ -76,7 +77,6 @@ public class SpawnBalls : MonoBehaviour {
 
 	[HideInInspector]public bool spawningBalls = true;
     
-	bool explodingBalls = false;
 
 
     // Use this for initialization
@@ -86,10 +86,7 @@ public class SpawnBalls : MonoBehaviour {
         _balls = new List<GameObject>();
         _lMaterial = new List<Material>();
         _lPhysicMaterial = new List<PhysicMaterial>();
-
-		if(_ballPrefab.name == "ExplosionBall"){
-			explodingBalls = true;
-		}
+		
 
         for (int i = 0; i < _ballPoolAmount; i++)
         {
@@ -111,14 +108,14 @@ public class SpawnBalls : MonoBehaviour {
     {
         //pitch
 
-        _micPitch =  Mathf.Clamp01(((Mathf.Clamp((float)VoiceProfile._voicePitch, _minPitch, _maxPitch))-_minPitch) / (_maxPitch - _minPitch));
+        _micPitch =  SIC.inputData.relativeFrequency;
 
 		
 
 		
-        _micAmplitude = VoiceProfile._amplitudeCurrent;
+        _micAmplitude = SIC.inputData.relativeAmplitude;
 		if(spawningBalls){
-			if ((_micAmplitude >= VoiceProfile._amplitudeSilence) && (!_isSpeaking)) //start speaking SPAWN
+			if ((_micAmplitude >= 0) && (!_isSpeaking)) //start speaking SPAWN
 			{
 				_currentColor = new Color(0, 0, 0, 1);
 				_isSpeaking = true;
@@ -132,18 +129,18 @@ public class SpawnBalls : MonoBehaviour {
 				//print(_currentBall.name);
 				_currentBallNum +=1;
 				_currentRigidbody.isKinematic = true;
-				_clipStart = MicManager.GetComponent<AudioSource>().time;
+				_clipStart = SIC.GetComponent<AudioSource>().time;
 				//_currentBall.GetComponent<DestroyAtZeroVelocity>().playerCollider = playerCollider;
 			
 			}
 
-			if ((_micAmplitude < VoiceProfile._amplitudeSilence) && (_isSpeaking)) //stop speaking RELEASE
+			if ((_micAmplitude < 0) && (_isSpeaking)) //stop speaking RELEASE
 			{
 				
 				if (_timeRecording >= _minSpeakTime){
-					_clipEnd = MicManager.GetComponent<AudioSource>().time;
+					_clipEnd = SIC.GetComponent<AudioSource>().time;
 					if(_playSoundMade){
-						_currentClip = MakeSubclip(MicManager.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
+						_currentClip = MakeSubclip(SIC.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
 						_currentBall.GetComponent<AudioSource>().clip = _currentClip;
 					}
 					
@@ -155,8 +152,7 @@ public class SpawnBalls : MonoBehaviour {
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 					
 					_highestAmplitude = 0;
-					MicManager.GetComponent<AudioPitch>().ClearMicrophone();
-					
+					SIC.SetupMic();
 					
 				} else {
 					_currentBall.SetActive(false);

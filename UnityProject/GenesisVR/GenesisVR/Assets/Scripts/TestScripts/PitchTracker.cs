@@ -83,9 +83,10 @@ public class PitchTracker : MonoBehaviour
         AnalyzeSound();
         if (display != null)
         {
-            display.text = "RMS: " + rmsValue.ToString("F2") +
-                " (" + dbValue.ToString("F1") + " dB)\n" +
-                "Pitch: " + pitchValue.ToString("F0") + " Hz";
+			display.text = "RMS: " + rmsValue.ToString("F2") +
+				" (" + dbValue.ToString("F1") + " dB)\n" +
+				"Pitch: " + pitchValue.ToString("F0") + " Hz\n" +
+				"FPS: " + Mathf.RoundToInt(1.0f/Time.smoothDeltaTime);
         }
     }
  
@@ -104,7 +105,7 @@ public class PitchTracker : MonoBehaviour
         if (dbValue < -160) dbValue = -160; // clamp it to -160dB min
  
         // get sound spectrum
-        GetComponent<AudioSource>().GetSpectrumData(spectrum, 0, FFTWindow.BlackmanHarris);
+        GetComponent<AudioSource>().GetSpectrumData(spectrum, 0, FFTWindow.Hamming);
         float maxV = 0f;
         for (i = 0; i < binSize; i++)
         { // find max
