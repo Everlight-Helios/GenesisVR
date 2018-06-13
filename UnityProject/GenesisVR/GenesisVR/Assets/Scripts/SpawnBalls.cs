@@ -8,7 +8,7 @@ public class SpawnBalls : MonoBehaviour {
 
 	[Header("Ball Options")]
     
-	public Collider playerCollider;
+	//public Collider playerCollider;
     public GameObject _ballPrefab;
     public Material _ballMaterial;
     public PhysicMaterial _ballPhysicMaterial;
@@ -29,7 +29,6 @@ public class SpawnBalls : MonoBehaviour {
 	public bool _bounceBasedOnPitch;
 	public float _forceAdd;
 	
-	private float _spawnTimer = 0.0f;
 	public float _minSpeakTime = 0.5f;
 	public bool _playSoundMade = true;
 
@@ -123,7 +122,6 @@ public class SpawnBalls : MonoBehaviour {
 			{
 				_currentColor = new Color(0, 0, 0, 1);
 				_isSpeaking = true;
-				_spawnTimer = 0.0f;
 				_currentBall = GetPooledBall();
 				_currentMaterial = _currentBall.GetComponent<Renderer>().material;
 				_currentRigidbody = _currentBall.GetComponent<Rigidbody>();
@@ -142,8 +140,7 @@ public class SpawnBalls : MonoBehaviour {
 			if ((_micAmplitude < VoiceProfile._amplitudeSilence) && (_isSpeaking)) //stop speaking RELEASE
 			{
 				
-				if (_spawnTimer >= _minSpeakTime){
-					//print(_spawnTimer + " >= " + _minSpeakTime);
+				if (_timeRecording >= _minSpeakTime){
 					_clipEnd = MicManager.GetComponent<AudioSource>().time;
 					if(_playSoundMade){
 						_currentClip = MakeSubclip(MicManager.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
@@ -166,27 +163,25 @@ public class SpawnBalls : MonoBehaviour {
 					//_currentBallNum -= 1;
 				}
 				_isSpeaking = false;
-				_spawnTimer = 0.0f;
 				_timeRecording = 0.0f;
 				
 			}
-
+			
 			if (_isSpeaking) //WHILE speaking
 			{
+				_timeRecording += Time.deltaTime;
+
 				if (_micAmplitude > _highestAmplitude)
 				{
 					_highestAmplitude = _micAmplitude;
 				}
 				_currentAmplitude = _micAmplitude;
-            
-				_timeRecording += Time.deltaTime;
-				_spawnTimer += Time.deltaTime;
 				
 				_currentBall.transform.position = _spawnLocation.position + (0.25f/(_growTimeMax/10)) * this.transform.forward * _timeRecording;
 				_ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
 				_currentBall.transform.localScale = new Vector3(_ballSizeCurrent, _ballSizeCurrent, _ballSizeCurrent);
 
-			
+				
 				bool belowMid = true;
 				float lowMid = 1.0f;
 				float midHigh = 0.0f;
@@ -207,26 +202,10 @@ public class SpawnBalls : MonoBehaviour {
 				}
 				_currentMaterial.SetColor("_Color", _currentColor);
 				_currentMaterial.SetColor("_EmissionColor", _currentColor);
-
-				if (_massMultiplyBySize)
-				{
-					_currentRigidbody.mass = defaultMass * _ballSizeCurrent;
-				}
-				else
-				{
-					_currentRigidbody.mass = defaultMass;
-				}
-
-				if (_bounceBasedOnPitch)
-				{
-					_currentSphereCollider.material.bounciness = Mathf.Lerp(_ballBounceMinMax.x, _ballBounceMinMax.y, _micPitch);
-				}
-				else
-				{
-					_currentSphereCollider.material.bounciness = _ballBounceMinMax.y;
-				}
-				_currentSphereCollider.material.bounceCombine = PhysicMaterialCombine.Average;
+				
+				
 			}
+			
 		}
     }
 
