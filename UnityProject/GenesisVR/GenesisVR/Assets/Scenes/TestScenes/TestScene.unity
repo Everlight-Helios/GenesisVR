@@ -247,6 +247,7 @@ MonoBehaviour:
     relativeFrequency: 0
     amplitude: 0
     relativeAmplitude: 0
+    amp01: 0
     toneLength: 0
     makingSound: 0
     spectrum:
@@ -612,7 +613,7 @@ MonoBehaviour:
   _massMultiplyBySize: 0
   _ballBounceMinMax: {x: 0.1, y: 1}
   _bounceBasedOnPitch: 0
-  _forceAdd: 5
+  _forceAdd: 100
   _minSpeakTime: 0.5
   _playSoundMade: 1
   lifeTime: 0

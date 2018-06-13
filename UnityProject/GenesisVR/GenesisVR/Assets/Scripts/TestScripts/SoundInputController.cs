@@ -17,7 +17,8 @@ namespace SoundInput
 		public float frequency;					 // the lastFrequency detect
 		public float relativeFrequency;			 // frequency in relation to min and max Freq
 		public float amplitude; 				 // volume in db
-		public float relativeAmplitude; 		 // volume in db minus the minimun db level
+		public float relativeAmplitude;			 // volume in db minus the minimun db level
+		public float amp01;
 		public float toneLength;				 // the length in seconds of the current sound				
 		public bool makingSound;				 // if the there is a sound registered
 		public float[] spectrum = new float[128];// audio spectrum	
@@ -143,6 +144,7 @@ namespace SoundInput
 			float rmsValue = Mathf.Sqrt( sum / data.Length );
 			inputData.amplitude = 20f * Mathf.Log10( rmsValue / 0.1f );
 			inputData.relativeAmplitude = inputData.amplitude - settings.minVolume;
+			inputData.amp01 = inputData.relativeAmplitude/(settings.maxVolume+Mathf.Abs(settings.minVolume));
 
 			if ( inputData.amplitude > maxVolume)
 			{
