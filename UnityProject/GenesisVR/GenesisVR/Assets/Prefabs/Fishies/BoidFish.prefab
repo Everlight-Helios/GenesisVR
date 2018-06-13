@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 54461731255306786}
   - component: {fileID: 114898940359870640}
   - component: {fileID: 136958241520405748}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: BoidFish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 4889252414488652}
   - component: {fileID: 135787965593735174}
   - component: {fileID: 114172159987465154}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: AwarenessBound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
