@@ -354,10 +354,18 @@ GameObject:
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 832582855}
   - component: {fileID: 832582854}
   - component: {fileID: 832582857}
   - component: {fileID: 832582856}
+=======
+  - component: {fileID: 1442277287}
+  - component: {fileID: 1442277286}
+  - component: {fileID: 1442277285}
+  - component: {fileID: 1442277284}
+  - component: {fileID: 1442277283}
+>>>>>>> 58bcb35290be44fcaaa362ecc48bbeb2381592b2
   m_Layer: 0
   m_Name: BoidsManager
   m_TagString: Untagged
@@ -395,6 +403,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!114 &832582856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -773,6 +782,8 @@ Transform:
   m_Father: {fileID: 583173289}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> 58bcb35290be44fcaaa362ecc48bbeb2381592b2
 --- !u!1 &2031507223
 GameObject:
   m_ObjectHideFlags: 0
