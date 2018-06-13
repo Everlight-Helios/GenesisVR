@@ -162,8 +162,8 @@ public class Boid : MonoBehaviour {
 		if (_flock.Count >= BoidsManager.MaxFlockSize) {
 			return;
 		}
-
-		Vector3 toJoining = joining.transform.position - this.transform.position;
+		
+		Vector3 toJoining = joining.gameObject.transform.position - this.transform.position;
 
 		// The perceived flock is limited to a specified FOV (default 180)
 		// Potential optimization to JUST cross product and/or dot product values?
