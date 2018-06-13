@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoidsManager : UnitySingletonPersistent<BoidsManager> {
 
-	[Range(0, 20)] [SerializeField] private int _maxFlockSize = 5;
+	[Range(0, 20)] [SerializeField] private int _maxFlockSize = 7;
 	[Range(0, 5)] [SerializeField] private float _speed = 0.3f;
 	[Range(0, 10)] [SerializeField] private float _cohesion = 1;
 	[Range(0, 10)] [SerializeField] private float _alignment = 1;
