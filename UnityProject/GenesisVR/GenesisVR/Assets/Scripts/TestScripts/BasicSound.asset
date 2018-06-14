@@ -14,7 +14,7 @@ MonoBehaviour:
   minFreq: 100
   maxFreq: 400
   minVolume: -10
-  maxVolume: 20
+  maxVolume: 10
   minY: -5
   maxY: 5
   colors: []

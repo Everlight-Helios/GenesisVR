@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
+  - AwarenessBounds
+  - SeperationBounds
   - Boundaries
-  - SeperationBound
-  - AwarenessBound
-  - FishCollider
   - Targets
+  - Fish Colliders
   - 
   - 
   - 
