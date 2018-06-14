@@ -11,7 +11,15 @@ public class BoidsManager : UnitySingletonPersistent<BoidsManager> {
 	[Range(0, 10)] [SerializeField] private float _separation = 3;
 	[Range(0, 10)] [SerializeField] private float _target = 2;
 
-	public static int MaxFlockSize {
+    public bool Birds = false;
+    SpawnBoids sp;
+
+    private void Start()
+    {
+        Birds = sp._spawnBirds;
+    }
+
+    public static int MaxFlockSize {
 		get { return BoidsManager.Instance._maxFlockSize; }
 		set { BoidsManager.Instance._maxFlockSize = value;}
 	}
@@ -40,4 +48,19 @@ public class BoidsManager : UnitySingletonPersistent<BoidsManager> {
 		get { return BoidsManager.Instance._target; }
 		set { BoidsManager.Instance._target = value;}
 	}
+    private void Update()
+    {
+        if (Birds)
+        {
+            //Change to most optimal bird settings
+            _maxFlockSize = 5;
+            _speed = 0.9f;
+            _cohesion = 1;
+            _alignment = 1;
+            _separation = 3;
+            _target = 1;
+                
+            
+        }
+    }
 }
