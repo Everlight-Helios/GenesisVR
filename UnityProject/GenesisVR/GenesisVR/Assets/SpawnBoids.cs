@@ -15,14 +15,11 @@ public class SpawnBoids : MonoBehaviour {
 
     [Header("Spawn things")]
     public Transform _spawnLocation;
-    public float _forceAdd = 10;
+    public GameObject _ring;
+    public float _forceAdd = 30;
 
     public bool _spawnBirds = false;
     
-    public float _minSpeakTime = 0.5f;
-    public bool _playSoundMade = false;
-    
-
 
     [Header("BoidsTarget")]
     public GameObject _target;
@@ -49,7 +46,8 @@ public class SpawnBoids : MonoBehaviour {
 
     private float _currentAmplitude;
     private float _highestAmplitude;
-  
+    public float _minSpeakTime = 0.5f;
+    public bool _playSoundMade = false;
 
     [HideInInspector] public bool spawningBoids = true;
     
@@ -89,7 +87,7 @@ public class SpawnBoids : MonoBehaviour {
                     {
                         _currentClip = MakeSubclip(SIC.GetComponent<AudioSource>().clip, _clipStart, _clipEnd);
 
-                        //Zet de opgenomen audioclip op de vis/vogel
+                        //Zet de opgenomen audioclip op de vis/vogel/ring
                         //_currentBall.GetComponent<AudioSource>().clip = _currentClip;
                     }
 
@@ -103,11 +101,11 @@ public class SpawnBoids : MonoBehaviour {
                     }
                     if (!_spawnBirds)
                     {
-                       GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector]);
+                       GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector], _spawnLocation);
                     }
                     else
                     {
-                        GameObject bird = (GameObject)Instantiate(_birdPrefabs[_pitchSelector]);
+                        GameObject bird = (GameObject)Instantiate(_birdPrefabs[_pitchSelector],_spawnLocation);
                     }
 
                     _highestAmplitude = 0;
