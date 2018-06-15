@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 39e46c317ee634cf9abd7100187a6a16
-timeCreated: 1528895313
+guid: 0caf93cea9a761a4fa4d216fd8b0ffc9
+timeCreated: 1528983870
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -41,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -49,7 +49,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -62,8 +62,8 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 101
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
