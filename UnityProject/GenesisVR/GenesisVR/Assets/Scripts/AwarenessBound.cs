@@ -7,11 +7,16 @@ public class AwarenessBound : BoidBound {
 
 	void OnTriggerEnter(Collider other) {
 		Boid otherBoid = other.GetComponentInParent<Boid>();
-		this.Boid.AddBoidToFlock(otherBoid);
+		if(otherBoid != null){
+			this.Boid.AddBoidToFlock(otherBoid);
+		}
+		
 	}
 
 	void OnTriggerExit(Collider other) {
 		Boid otherBoid = other.GetComponentInParent<Boid>();
-		this.Boid.RemoveBoidFromFlock(otherBoid);
+		if(otherBoid != null){
+			this.Boid.RemoveBoidFromFlock(otherBoid);
+		}
 	}
 }

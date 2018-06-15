@@ -12,11 +12,12 @@ public class BoidsManager : UnitySingletonPersistent<BoidsManager> {
 	[Range(0, 10)] [SerializeField] private float _target = 2;
 
     public bool Birds = false;
-    SpawnBoids sp;
+    public SpawnBoids sp;
 
     private void Start()
     {
-        Birds = sp._spawnBirds;
+
+		Birds = sp._spawnBirds;
     }
 
     public static int MaxFlockSize {

@@ -113,6 +113,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &506813688 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114600419858683284, guid: 763ce3165424c1e48a8f4e42a3d93b9f,
+    type: 2}
+  m_PrefabInternal: {fileID: 590408342}
+  m_Script: {fileID: 11500000, guid: b42501810d83358408c855df71782d88, type: 3}
 --- !u!1001 &590408342
 Prefab:
   m_ObjectHideFlags: 0
@@ -162,6 +168,11 @@ Prefab:
       propertyPath: ZeroDistance
       value: 1.95
       objectReference: {fileID: 0}
+    - target: {fileID: 114127091019732350, guid: 763ce3165424c1e48a8f4e42a3d93b9f,
+        type: 2}
+      propertyPath: sp
+      value: 
+      objectReference: {fileID: 506813688}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 763ce3165424c1e48a8f4e42a3d93b9f, type: 2}
   m_IsPrefabParent: 0
