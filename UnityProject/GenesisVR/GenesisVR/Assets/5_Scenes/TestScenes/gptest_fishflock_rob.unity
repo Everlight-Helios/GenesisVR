@@ -167,6 +167,22 @@ Prefab:
       propertyPath: _spawnLocation
       value: 
       objectReference: {fileID: 1265203893}
+    - target: {fileID: 114600419858683284, guid: 763ce3165424c1e48a8f4e42a3d93b9f,
+        type: 2}
+      propertyPath: _ring
+      value: 
+      objectReference: {fileID: 1229099565156544, guid: efb0de326d57c7b4fbcc5afc40a8533f,
+        type: 2}
+    - target: {fileID: 114600419858683284, guid: 763ce3165424c1e48a8f4e42a3d93b9f,
+        type: 2}
+      propertyPath: _forceAdd
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 114600419858683284, guid: 763ce3165424c1e48a8f4e42a3d93b9f,
+        type: 2}
+      propertyPath: _spawnBirds
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 763ce3165424c1e48a8f4e42a3d93b9f, type: 2}
   m_IsPrefabParent: 0
