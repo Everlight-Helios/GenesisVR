@@ -18,7 +18,7 @@ public class SpawnBoids : MonoBehaviour {
     public Transform _spawnLocation;
     public GameObject _ring;
     public float _forceAdd = 30;
-
+    public int maxBoids = 50;
     public bool _spawnBirds = false;
     
 
@@ -55,12 +55,33 @@ public class SpawnBoids : MonoBehaviour {
     private Rigidbody _currentRigidbody;
     private SphereCollider _currentSphereCollider;
 
-  
+    private int currentFish = 0;
+    private int currentBird = 0;
+    List<GameObject> _fishes;
+    List<GameObject> _birds;
     private int _pitchSelector = 0;
 
     // Use this for initialization
     void Start () {
-       
+        _birds = new List<GameObject>();
+        _fishes = new List<GameObject>();
+
+        for (int i = 0; i < maxBoids; i++)
+        {
+            GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector], _spawnLocation);
+            fish.SetActive(false);
+            fish.name = "fish" + i;
+            _fishes.Add(fish);
+
+            /*if (_birdPrefabs[0] != null)
+            {
+                GameObject bird = (GameObject)Instantiate(_birdPrefabs[_pitchSelector], _spawnLocation);
+                bird.SetActive(false);
+                bird.name = "Bird" + i;
+                _birds.Add(bird);
+            }*/
+            
+        }
     }
 	
 	// Update is called once per frame
@@ -91,6 +112,20 @@ public class SpawnBoids : MonoBehaviour {
 
                         //Zet de opgenomen audioclip op de vis/vogel/ring
                         //_currentBall.GetComponent<AudioSource>().clip = _currentClip;
+
+                        if (_spawnBirds)
+                        {
+                            if (currentBird < maxBoids)
+                                currentBird += 1;
+
+                        }
+                        else
+                        {
+                            if (currentFish < maxBoids)
+                                currentFish += 1;
+                        }
+
+
                     }
 
 
@@ -102,13 +137,13 @@ public class SpawnBoids : MonoBehaviour {
                     {
                         _pitchSelector = 0;
                     }
-                    if (!_spawnBirds)
+                    if (!_spawnBirds) //To reduce lagg while playing we are loading the prefabs before the level starts and only setting them Active;
                     {
-                       GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector], _spawnLocation);
+                        //GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector], _spawnLocation);
                     }
                     else
                     {
-                        GameObject bird = (GameObject)Instantiate(_birdPrefabs[_pitchSelector],_spawnLocation);
+                        //GameObject bird = (GameObject)Instantiate(_birdPrefabs[_pitchSelector],_spawnLocation);
                     }
 
                     _highestAmplitude = 0;
@@ -117,7 +152,15 @@ public class SpawnBoids : MonoBehaviour {
                 }
                 else
                 {
-                    
+                    if (_spawnBirds)
+                    {
+                        _birds[currentBird].SetActive(true);
+
+                    }
+                    else
+                    {
+                        _fishes[currentFish].SetActive(true);
+                    }
                 }
                 _isSpeaking = false;
                 _timeRecording = 0.0f;
@@ -216,5 +259,3 @@ public class SpawnBoids : MonoBehaviour {
 
 
 }
-
-
