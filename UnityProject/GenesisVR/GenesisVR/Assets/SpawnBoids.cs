@@ -6,10 +6,10 @@ using UnityEngine;
 public class SpawnBoids : MonoBehaviour {
 
     /* To add:
-     *
+     * - spawnRings >
      * - Target
-     * 
-     * - SpawnBirds op Key + prefabs 
+     * - Locatie fish spawn aanpassen?
+     * - SpawnBirds bool op Key + prefabs 
      */
 
 
