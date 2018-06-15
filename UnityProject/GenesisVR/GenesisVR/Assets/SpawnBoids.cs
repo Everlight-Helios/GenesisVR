@@ -6,6 +6,7 @@ using UnityEngine;
 public class SpawnBoids : MonoBehaviour {
 
     /* To add:
+     * - 
      * - spawnRings >
      * - Target
      * - Locatie fish spawn aanpassen?
@@ -75,8 +76,8 @@ public class SpawnBoids : MonoBehaviour {
                 _isSpeaking = true;
                
                 _clipStart = SIC.GetComponent<AudioSource>().time;
-                GameObject r = (GameObject)Instantiate(_ring, _spawnLocation);
-                _currentRigidbody = _ring.GetComponentInChildren<Rigidbody>();
+               // GameObject r = (GameObject)Instantiate(_ring, _spawnLocation);
+               // _currentRigidbody = _ring.GetComponentInChildren<Rigidbody>();
                
             }
             if (_micAmplitude < 0 && _isSpeaking)
@@ -95,7 +96,7 @@ public class SpawnBoids : MonoBehaviour {
 
                     _highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
                     //print(_currentBoid.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
-                    _currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
+                    //_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
                     
                     if (_pitchSelector < 0)
                     {
