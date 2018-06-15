@@ -336,6 +336,7 @@ MonoBehaviour:
   _separation: 3
   _target: 2
   Birds: 0
+  sp: {fileID: 114600419858683284}
 --- !u!114 &114300677271419540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7488f5d262d2d4f86ac6b8dc5b42d3cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ZeroDistance: 8
+  ZeroDistance: 1.95
 --- !u!114 &114600419858683284
 MonoBehaviour:
   m_ObjectHideFlags: 1
