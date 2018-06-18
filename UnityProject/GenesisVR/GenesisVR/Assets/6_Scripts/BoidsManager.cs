@@ -5,18 +5,19 @@ using UnityEngine;
 public class BoidsManager : UnitySingletonPersistent<BoidsManager> {
 
 	[Range(0, 20)] [SerializeField] private int _maxFlockSize = 7;
-	[Range(0, 5)] [SerializeField] private float _speed = 0.3f;
+	[Range(0,  5)] [SerializeField] private float _speed = 0.3f;
 	[Range(0, 10)] [SerializeField] private float _cohesion = 1;
 	[Range(0, 10)] [SerializeField] private float _alignment = 1;
 	[Range(0, 10)] [SerializeField] private float _separation = 3;
 	[Range(0, 10)] [SerializeField] private float _target = 2;
 
     public bool Birds = false;
-    SpawnBoids sp;
+    public SpawnBoids sp;
 
     private void Start()
     {
-        Birds = sp._spawnBirds;
+
+		Birds = sp._spawnBirds;
     }
 
     public static int MaxFlockSize {
