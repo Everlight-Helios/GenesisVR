@@ -20,6 +20,9 @@ public class SpawnBoids : MonoBehaviour {
     public float _forceAdd = 30;
     public int maxBoids = 50;
     public bool _spawnBirds = false;
+
+    [Header("Testing options")]
+    public bool _spawnAllFish = false;
     
 
     [Header("BoidsTarget")]
@@ -69,7 +72,10 @@ public class SpawnBoids : MonoBehaviour {
         for (int i = 0; i < maxBoids; i++)
         {
             GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector], _spawnLocation);
-            fish.SetActive(false);
+            if (!_spawnAllFish)
+            {
+                fish.SetActive(false);
+            }
             fish.name = "fish" + i;
             _fishes.Add(fish);
 
