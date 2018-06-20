@@ -13,7 +13,7 @@ public class _TargetRayTest : MonoBehaviour {
         if (Physics.Raycast(transform.position,ray, out hit, 100))
         {
 				   	Debug.DrawLine(transform.position, hit.point);
-						Debug.Log(hit.point);
+						//Debug.Log(hit.point);
 					}
 	}
 }
