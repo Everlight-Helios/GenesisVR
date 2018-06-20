@@ -46,8 +46,7 @@ public class SpawnBoids : MonoBehaviour {
     private float _clipStart;
     private float _clipEnd;
     private AudioClip _currentClip;
-
-    private float _currentAmplitude;
+	
     private float _highestAmplitude;
   
 
@@ -103,11 +102,11 @@ public class SpawnBoids : MonoBehaviour {
                     }
                     if (!_spawnBirds)
                     {
-                       GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector]);
+						GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector]);
                     }
                     else
                     {
-                        GameObject bird = (GameObject)Instantiate(_birdPrefabs[_pitchSelector]);
+						GameObject bird = (GameObject)Instantiate(_birdPrefabs[_pitchSelector]);
                     }
 
                     _highestAmplitude = 0;
@@ -130,7 +129,6 @@ public class SpawnBoids : MonoBehaviour {
                 {
                     _highestAmplitude = _micAmplitude;
                 }
-                _currentAmplitude = _micAmplitude;
                 
 
                 bool belowMid = true;

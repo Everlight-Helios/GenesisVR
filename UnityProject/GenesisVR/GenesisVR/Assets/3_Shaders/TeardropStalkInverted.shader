@@ -91,5 +91,4 @@ Shader "TeardropStalkInverted" {
         }
     }
     FallBack "Diffuse"
-    CustomEditor "ShaderForgeMaterialInspector"
 }

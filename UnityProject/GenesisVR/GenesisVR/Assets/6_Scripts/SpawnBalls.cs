@@ -48,7 +48,6 @@ public class SpawnBalls : MonoBehaviour {
 	public Color _currentColor;
     private int _currentItem;
     private Rigidbody _currentRigidbody;
-    private SphereCollider _currentSphereCollider;
 
     //microphone variables
 	[Header("Mic Options")]
@@ -68,7 +67,6 @@ public class SpawnBalls : MonoBehaviour {
 	private AudioClip _currentClip;
     
     private float _ballSizeCurrent;
-	private float _currentAmplitude;
     
     
     private float _highestAmplitude;
@@ -122,7 +120,6 @@ public class SpawnBalls : MonoBehaviour {
 				_currentBall = GetPooledBall();
 				_currentMaterial = _currentBall.GetComponent<Renderer>().material;
 				_currentRigidbody = _currentBall.GetComponent<Rigidbody>();
-				_currentSphereCollider = _currentBall.GetComponent<SphereCollider>();
 				_currentMaterial.SetColor("_Color", _currentColor);
 				_currentBall.transform.position = _spawnLocation.position;
 				_currentBall.name = "Ball" + _currentBallNum;
@@ -171,7 +168,6 @@ public class SpawnBalls : MonoBehaviour {
 				{
 					_highestAmplitude = _micAmplitude;
 				}
-				_currentAmplitude = _micAmplitude;
 				
 				_currentBall.transform.position = _spawnLocation.position + (0.25f/(_growTimeMax/10)) * this.transform.forward * _timeRecording;
 				_ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
@@ -213,7 +209,6 @@ public class SpawnBalls : MonoBehaviour {
             if (!_balls[i].activeInHierarchy)
             {
                 _balls[i].SetActive(true);
-                _currentItem = i;
                 return _balls[i];
             }
         }
@@ -223,7 +218,6 @@ public class SpawnBalls : MonoBehaviour {
         {
             GameObject obj = (GameObject)Instantiate(_ballPrefab);
             _balls.Add(obj);
-            _currentItem = _balls.Count - 1;
             return obj;
 
         }

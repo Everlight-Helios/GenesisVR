@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Boid : MonoBehaviour {
-	#if DEBUG
+	//#if DEBUG
 		public bool LogActions;
-	#endif
+	//#endif
 
 	private Rigidbody _rigidbody;
 	[SerializeField] private BoidBound _awarenessBound;
@@ -20,13 +20,16 @@ public class Boid : MonoBehaviour {
 	[SerializeField] private float _turnSensitivity = 2.0f;
 
 	public BoidTarget Target;
+	public Vector3 nextForward, toCohesion, toAlignment, toSeparation, toTarget, toBoundary;
+	public Vector3 nextPos;
+	public float speed;
 
 	void Awake() {
 		_rigidbody = this.GetComponent<Rigidbody>();
 	}
 
 	void FixedUpdate () {
-		Vector3 nextForward, toCohesion, toAlignment, toSeparation, toTarget, toBoundary;
+		
 		nextForward = toCohesion = toAlignment = toSeparation = toTarget = toBoundary = Vector3.zero;
 
 		// Do cohesion, alignment, and target only if within bounds
@@ -43,12 +46,12 @@ public class Boid : MonoBehaviour {
 
 		toSeparation = CalcTowardsSeparation();
 
-		#if DEBUG // This macro is set in the project's Player settings
+		//#if DEBUG // This macro is set in the project's Player settings
 			toCohesion *= BoidsManager.Cohesion;
 			toAlignment *= BoidsManager.Alignment;
 			toSeparation *= BoidsManager.Separation;
 			toTarget *= BoidsManager.Target;
-		#endif
+		//#endif
 
 		nextForward += toCohesion + toAlignment + toBoundary + toTarget + toSeparation;
 		nextForward.Normalize();
@@ -66,23 +69,23 @@ public class Boid : MonoBehaviour {
 		}
 
 		// The boid's direction has been updated, now lets move it forward
-		float speed = 20;
-		#if DEBUG
+		speed = 20;
+		//#if DEBUG
 			speed = BoidsManager.Speed*20;
-		#endif
+		//#endif
 
 		// Move the boid forward (uses rigidbody physics, see commented below for no collisions)
-		Vector3 nextPos = transform.forward*speed;
+		nextPos = transform.forward*speed;
 		_rigidbody.velocity = nextPos;
 
 		// If not using boid collisions: uncomment below line, disable capsule collider, enable `Is Kinematic` on rigidbody, comment out rigidbody velocity update above
 		// this.transform.position = nextPos;
 
-		#if DEBUG
+		//#if DEBUG
 			if (this.LogActions) {
 				Debug.Log("C: " + toCohesion + ", A: " + toAlignment + ", S: " + toSeparation + ", T: " + toTarget + ", B: " + toBoundary + "\nnextPos: " + nextPos);
 			}
-		#endif
+		//#endif
 	}
 
 	private Vector3 CalcTowardsCohesion() {

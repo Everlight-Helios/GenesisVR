@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class FishDebugger : MonoBehaviour {
 	
-	public BoidTarget boidTar;
+	public Boid firstFish;
+	public int fishes;
 
 	// Use this for initialization
 	void Start () {
@@ -13,13 +14,12 @@ public class FishDebugger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		this.GetComponent<TextMesh>().text = 
-			"Max Flock Size: " + BoidsManager.MaxFlockSize + 
-			"\nSpeed: " + BoidsManager.Speed +
-			"\nCohesion: " + BoidsManager.Cohesion + 
-			"\nAlignment: " + BoidsManager.Alignment +
-			"\nCloseTarget: " + BoidsManager.Target + 
-			"\nTargetPos: " + boidTar.transform.position + 
-			"\nZeroDistance: " + boidTar.ZeroDistance;
+		int i = 0;
+		foreach(GameObject g in GameObject.FindGameObjectsWithTag("Fishes")){
+			i++;
+		}
+		fishes = i;
+		i=0;
+		this.GetComponent<TextMesh>().text = "Amount of Fishes: " + fishes;
 	}
 }
