@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: WaterUnderneath
-  m_Shader: {fileID: 4800000, guid: 4dc9850861b42234daa280d4e446e1c7, type: 3}
+  m_Shader: {fileID: 4800000, guid: 16516895e8a79bf49a6562c3c3b84cbf, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -88,6 +88,7 @@ Material:
     - _UVSec: 0
     - _WaveScale: 0.07
     - _ZWrite: 1
+    - _isInnerAlphaBlendOrColor: 0
     - strength: -0.59
     - transparency: 0.366
     m_Colors:
@@ -109,5 +110,6 @@ Material:
     - _GSteepness: {r: 1, g: 1, b: 1, a: 1}
     - _InvFadeParemeter: {r: 0.2189655, g: 0.1594483, b: 0.04310345, a: 0}
     - _ReflectionColor: {r: 0.5803922, g: 0.6862745, b: 0.7607844, a: 0.419}
+    - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
     - _WorldLightDir: {r: -0.030375138, g: 0.20139083, b: 0.9790399, a: 0}
