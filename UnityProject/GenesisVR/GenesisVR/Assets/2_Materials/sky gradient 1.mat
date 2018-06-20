@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: sky gradient 1
-  m_Shader: {fileID: 4800000, guid: 19a1982c6e7263246abfcd2370d4156a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1397d172beeb9e240ad61a3233780b08, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -58,9 +58,9 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distribution: 0.132
-    - _Distribution1: 0.086
-    - _Distribution2: 0.2
+    - _Distribution: 0.03
+    - _Distribution1: 0.15
+    - _Distribution2: 0.32
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -72,9 +72,9 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StartPoint: 0.336
+    - _StartPoint: 0.32
     - _StartPoint1: 0.318
-    - _StartPoint2: 0.236
+    - _StartPoint2: 0.19
     - _UVSec: 0
     - _ZWrite: 1
     - __dirty: 0
