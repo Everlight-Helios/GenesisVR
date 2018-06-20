@@ -16,7 +16,6 @@ public class BoidsManager : UnitySingletonPersistent<BoidsManager> {
 
     private void Start()
     {
-
 		Birds = sp._spawnBirds;
     }
 

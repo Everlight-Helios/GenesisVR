@@ -74,6 +74,8 @@ public class SpawnBalls : MonoBehaviour {
     public static int _currentBallNum = 1;
 
 	[HideInInspector]public bool spawningBalls = true;
+
+	bool waterBalls = false;
     
 
 
@@ -85,6 +87,9 @@ public class SpawnBalls : MonoBehaviour {
         _lMaterial = new List<Material>();
         _lPhysicMaterial = new List<PhysicMaterial>();
 		
+		if(_ballPrefab.name == "WaterBall"){
+			waterBalls = true;
+		}
 
         for (int i = 0; i < _ballPoolAmount; i++)
         {
@@ -143,13 +148,17 @@ public class SpawnBalls : MonoBehaviour {
 					
 					_currentRigidbody.isKinematic = false;
 					
+					if(waterBalls){
+						_currentBall.GetComponent<WaterBall_Script>().floatTimerStart = true;
+					}
 					
-					_highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
-					//print(_currentBall.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
+					//_highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
+					
+					//print(_currentBall.name + " - Exit force -> " + this.transform.forward + " " + _forceAdd + " " +  _highestAmplitude);
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 					
 					_highestAmplitude = 0;
-					SIC.SetupMic();
+					//SIC.SetupMic();
 					
 				} else {
 					_currentBall.SetActive(false);
@@ -167,6 +176,7 @@ public class SpawnBalls : MonoBehaviour {
 				if (_micAmplitude > _highestAmplitude)
 				{
 					_highestAmplitude = _micAmplitude;
+					
 				}
 				
 				_currentBall.transform.position = _spawnLocation.position + (0.25f/(_growTimeMax/10)) * this.transform.forward * _timeRecording;
