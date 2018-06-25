@@ -55,6 +55,7 @@ namespace SoundInput
 
 		private Detector analyser;
 		private new AudioSource audio;
+		private AudioClip micClip;
 		private float[] data;
 		private int [] detectionsMade;
 		private float previousFrequency;		
@@ -165,7 +166,6 @@ namespace SoundInput
 			else
 			{
 				inputData.makingSound = true;
-				
 				audio.GetSpectrumData(inputData.spectrum, 1, FFTWindow.Rectangular);
 				previousFrequency = inputData.frequency;
 				// detect frequency 
@@ -178,11 +178,14 @@ namespace SoundInput
 			callback.Invoke(inputData);
 		}
 
+		
+
 		public void StartMic()
 		{
 			audio.Stop();
 			audio.time = 0;
 			audio.clip = Microphone.Start(SelectedDevice, true, 30, maxFreq);//Starts recording
+			//micClip = audio.clip;
 			while (!(Microphone.GetPosition(SelectedDevice) > 0)){} // Wait until the recording has started
 			audio.Play(); // Play the audio source!
 			sample = true;
@@ -233,12 +236,27 @@ namespace SoundInput
 
 		public void SetupMic()
 		{	
-			audio.Stop();		
+			audio.Stop();
+			if(Microphone.IsRecording(SelectedDevice)){
+				Microphone.End(SelectedDevice);
+			}
 			audio.clip = null;
 			audio.loop = true;
 			audio.mute = false;
 
 			StartMic();
+		}
+
+		public void NullifyClipData()
+		{
+			float[] samples = new float[audio.clip.samples * audio.clip.channels];
+			audio.clip.GetData(samples, 0);
+			int i = 0;
+			while (i < samples.Length) {
+				samples[i] = samples[i] * 0.0F;
+				++i;
+			}
+			audio.clip.SetData(samples, 0);
 		}
 
 		private int Repetitions(int element)

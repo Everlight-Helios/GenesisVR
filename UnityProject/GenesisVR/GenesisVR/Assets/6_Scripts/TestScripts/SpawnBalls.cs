@@ -120,6 +120,7 @@ public class SpawnBalls : MonoBehaviour {
 		if(spawningBalls){
 			if ((_micAmplitude >= 0) && (!_isSpeaking)) //start speaking SPAWN
 			{
+				//SIC.SetTime(0.0f);
 				_currentColor = new Color(0, 0, 0, 1);
 				_isSpeaking = true;
 				_currentBall = GetPooledBall();
@@ -158,7 +159,7 @@ public class SpawnBalls : MonoBehaviour {
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 					
 					_highestAmplitude = 0;
-					//SIC.SetupMic();
+					SIC.NullifyClipData();
 					
 				} else {
 					_currentBall.SetActive(false);
