@@ -6,12 +6,13 @@ using UnityEngine;
 public class SpawnBoids : MonoBehaviour {
 
     /* To add:
-     * - 
+     * -
      * - spawnRings >
      * - Target
      * - Locatie fish spawn aanpassen?
-     * - SpawnBirds bool op Key + prefabs 
+     * - SpawnBirds bool op Key + prefabs
      */
+
 
 
     [Header("Spawn things")]
@@ -23,7 +24,7 @@ public class SpawnBoids : MonoBehaviour {
 
     [Header("Testing options")]
     public bool _spawnAllFish = false;
-    
+
 
     [Header("BoidsTarget")]
     public GameObject _target;
@@ -54,7 +55,7 @@ public class SpawnBoids : MonoBehaviour {
     public bool _playSoundMade = false;
 
     [HideInInspector] public bool spawningBoids = true;
-    
+
     private Rigidbody _currentRigidbody;
     private SphereCollider _currentSphereCollider;
 
@@ -86,10 +87,10 @@ public class SpawnBoids : MonoBehaviour {
                 bird.name = "Bird" + i;
                 _birds.Add(bird);
             }*/
-            
+
         }
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         //pitch
@@ -101,11 +102,11 @@ public class SpawnBoids : MonoBehaviour {
             if (_micAmplitude >= 0 && !_isSpeaking) //start speaking
             {
                 _isSpeaking = true;
-               
+
                 _clipStart = SIC.GetComponent<AudioSource>().time;
                // GameObject r = (GameObject)Instantiate(_ring, _spawnLocation);
                // _currentRigidbody = _ring.GetComponentInChildren<Rigidbody>();
-               
+
             }
             if (_micAmplitude < 0 && _isSpeaking)
             {
@@ -138,7 +139,7 @@ public class SpawnBoids : MonoBehaviour {
                     _highestAmplitude = Mathf.Clamp(_highestAmplitude, 0, _maxRegisteredAmplitude);
                     //print(_currentBoid.name + " - Exit force -> " + this.transform.forward * _forceAdd * _highestAmplitude);
                     //_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
-                    
+
                     if (_pitchSelector < 0)
                     {
                         _pitchSelector = 0;
@@ -181,7 +182,7 @@ public class SpawnBoids : MonoBehaviour {
                     _highestAmplitude = _micAmplitude;
                 }
                 _currentAmplitude = _micAmplitude;
-                
+
 
                 bool belowMid = true;
                 float lowMid = 1.0f;
@@ -201,6 +202,17 @@ public class SpawnBoids : MonoBehaviour {
                 }
                 if (belowMid)
                 {
+                  //Influence the flock with your pitch
+                  float _boidsFixer = Mathf.Clamp01(lowMid);
+
+                  if (_boidsFixer == 0){
+                    BoidsManager.Cohesion = 0.5f;
+                    BoidsManager.Alignment = 1f;
+                  } else {
+                    BoidsManager.Cohesion = 1.5f;
+                    BoidsManager.Alignment = 3f;
+
+                  }
                     if (!_spawnBirds)
                     {
                         if (_fishPrefabs.Length >= 2)
@@ -219,6 +231,16 @@ public class SpawnBoids : MonoBehaviour {
                 }
                 else
                 {
+                  float _boidsFixer = Mathf.Clamp01(midHigh);
+
+                  if (_boidsFixer == 0){
+                    BoidsManager.Cohesion = 1.5f;
+                    BoidsManager.Alignment = 3f;
+                  } else {
+                    BoidsManager.Cohesion = 2.5f;
+                    BoidsManager.Alignment = 5f;
+
+                  }
                     if (!_spawnBirds)
                     {
                         if (_fishPrefabs.Length >= 3)
@@ -240,7 +262,7 @@ public class SpawnBoids : MonoBehaviour {
 
     }
 
-    
+
 
     private AudioClip MakeSubclip(AudioClip clip, float start, float stop)
     {
