@@ -72,7 +72,7 @@ public class SpawnBoids : MonoBehaviour {
 
         for (int i = 0; i < maxBoids; i++)
         {
-            GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector], _spawnLocation);
+            GameObject fish = (GameObject)Instantiate(_fishPrefabs[_pitchSelector], _spawnLocation.position, _fishPrefabs[_pitchSelector].transform.rotation);
             if (!_spawnAllFish)
             {
                 fish.SetActive(false);
@@ -147,7 +147,7 @@ public class SpawnBoids : MonoBehaviour {
                     }
 
                     _highestAmplitude = 0;
-                    SIC.SetupMic();
+                    SIC.NullifyClipData();
 
                 }
                 else
@@ -192,19 +192,24 @@ public class SpawnBoids : MonoBehaviour {
                     midHigh = (_micPitch - 0.5f) * 2;
                     lowMid = 0;
                 }
-                if (belowMid)
+
+				BoidsManager.Cohesion = 0.5f + _micPitch*2;
+				BoidsManager.Alignment = 1f + _micPitch*4;
+				BoidsManager.Separation = 1f + _micPitch*9;
+
+				if (belowMid)
                 {
                   //Influence the flock with your pitch
                   float _boidsFixer = Mathf.Clamp01(lowMid);
 
-                  if (_boidsFixer == 0){
+                 /* if (_boidsFixer == 0){
                     BoidsManager.Cohesion = 0.5f;
                     BoidsManager.Alignment = 1f;
                   } else {
                     BoidsManager.Cohesion = 1.5f;
                     BoidsManager.Alignment = 3f;
 
-                  }
+                  }*/
                     if (!_spawnBirds)
                     {
                         if (_fishPrefabs.Length >= 2)
@@ -224,7 +229,7 @@ public class SpawnBoids : MonoBehaviour {
                 else
                 {
                   float _boidsFixer = Mathf.Clamp01(midHigh);
-
+				/*
                   if (_boidsFixer == 0){
                     BoidsManager.Cohesion = 1.5f;
                     BoidsManager.Alignment = 3f;
@@ -232,7 +237,7 @@ public class SpawnBoids : MonoBehaviour {
                     BoidsManager.Cohesion = 2.5f;
                     BoidsManager.Alignment = 5f;
 
-                  }
+                  }*/
                     if (!_spawnBirds)
                     {
                         if (_fishPrefabs.Length >= 3)
@@ -248,6 +253,7 @@ public class SpawnBoids : MonoBehaviour {
                         }
                     }
                 }
+				
 
             }
         }

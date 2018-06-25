@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/5_Scenes/TestScenes/gptest_waterballs_eve.unity
     guid: 3538692e6e13f7d45b304d9dc3b30d9d
+  - enabled: 1
+    path: Assets/5_Scenes/TestScenes/gptest_rob/targetManipulation.unity
+    guid: 8246b5c073d6aae479d35e6b3d3900a0

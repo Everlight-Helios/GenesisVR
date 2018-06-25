@@ -86,6 +86,7 @@ public class SpawnBalls : MonoBehaviour {
         _balls = new List<GameObject>();
         _lMaterial = new List<Material>();
         _lPhysicMaterial = new List<PhysicMaterial>();
+		_isSpeaking = false;
 		
 		if(_ballPrefab.name == "WaterBall"){
 			waterBalls = true;
@@ -118,7 +119,7 @@ public class SpawnBalls : MonoBehaviour {
 		
         _micAmplitude = SIC.inputData.amp01;
 		if(spawningBalls){
-			if ((_micAmplitude >= 0) && (!_isSpeaking)) //start speaking SPAWN
+			if ((_micAmplitude > 0) && (!_isSpeaking)) //start speaking SPAWN
 			{
 				//SIC.SetTime(0.0f);
 				_currentColor = new Color(0, 0, 0, 1);
@@ -137,7 +138,7 @@ public class SpawnBalls : MonoBehaviour {
 			
 			}
 
-			if ((_micAmplitude < 0) && (_isSpeaking)) //stop speaking RELEASE
+			if ((_micAmplitude <= 0) && (_isSpeaking)) //stop speaking RELEASE
 			{
 				
 				if (_timeRecording >= _minSpeakTime){

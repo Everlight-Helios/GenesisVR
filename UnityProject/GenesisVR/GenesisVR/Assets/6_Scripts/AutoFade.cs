@@ -37,30 +37,6 @@ using UnityEngine.SceneManagement;
          DontDestroyOnLoad(this);
          m_Instance = this;
          m_Material = Resources.Load<Material>("Plane_No_zTest");
-		#if UNITY_EDITOR
-         if (m_Material == null)
-         {
-             var resDir = new System.IO.DirectoryInfo(System.IO.Path.Combine(Application.dataPath, "Resources"));
-             if (!resDir.Exists)
-                 resDir.Create();
-             Shader s = Shader.Find("Plane/No zTest");
-             if (s == null)
-             {
-                 string shaderText = "Shader \"Plane/No zTest\" { SubShader { Pass { Blend SrcAlpha OneMinusSrcAlpha ZWrite Off Cull Off Fog { Mode Off } BindChannels { Bind \"Color\",color } } } }";
-                 string path = System.IO.Path.Combine(resDir.FullName, "Plane_No_zTest.shader");
-                 Debug.Log("Shader missing, create asset: " + path);
-                 System.IO.File.WriteAllText(path, shaderText);
-                 UnityEditor.AssetDatabase.Refresh(UnityEditor.ImportAssetOptions.ForceSynchronousImport);
-                 UnityEditor.AssetDatabase.LoadAssetAtPath<Shader>("Resources/Plane_No_zTest.shader");
-                 s = Shader.Find("Plane/No zTest");
-             }
-             var mat = new Material(s);
-             mat.name = "Plane_No_zTest";
-             UnityEditor.AssetDatabase.CreateAsset(mat, "Assets/Resources/Plane_No_zTest.mat");
-             m_Material = mat;
- 
-         }
-		#endif
      }
  
      private void DrawQuad(Color aColor,float aAlpha)
@@ -71,10 +47,10 @@ using UnityEngine.SceneManagement;
          GL.LoadOrtho();
          GL.Begin(GL.QUADS);
          GL.Color(aColor);   // moved here, needs to be inside begin/end
-         GL.Vertex3(0, 0, -1);
-         GL.Vertex3(0, 1, -1);
-         GL.Vertex3(1, 1, -1);
-         GL.Vertex3(1, 0, -1);
+         GL.Vertex3(0, 0, -2);
+         GL.Vertex3(0, 1, -2);
+         GL.Vertex3(1, 1, -2);
+         GL.Vertex3(1, 0, -2);
          GL.End();
          GL.PopMatrix();
      }
@@ -98,6 +74,9 @@ using UnityEngine.SceneManagement;
              yield return new WaitForEndOfFrame();
              t = Mathf.Clamp01(t - unscaledClampedDT() / aFadeInTime);
              DrawQuad(aColor,t);
+			if(t<0.001f){
+				Destroy(this.gameObject);
+			}
          }
      }
      private void StartFade(float aFadeOutTime, float aFadeInTime, Color aColor)
