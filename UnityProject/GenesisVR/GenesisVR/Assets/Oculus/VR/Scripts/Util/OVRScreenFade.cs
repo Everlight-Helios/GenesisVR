@@ -193,7 +193,7 @@ public class OVRScreenFade : MonoBehaviour
 			elapsedTime += Time.deltaTime;
             currentAlpha = Mathf.Lerp(startAlpha, endAlpha, Mathf.Clamp01(elapsedTime / fadeTime));
             SetMaterialAlpha();
-			print(elapsedTime + " - " + Time.time);
+			//print(elapsedTime + " - " + Time.time);
 			if(currentAlpha >= 0.99f && loadLevel == true){
 				SceneManager.LoadScene(levelToLoad);
 			}
