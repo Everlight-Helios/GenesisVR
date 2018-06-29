@@ -14,7 +14,7 @@ public class SwitchSceneOnGoButton : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)){
+		if(OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || OVRInput.GetDown(OVRInput.Button.One)){
 			GameObject.Find("Main Camera").GetComponent<OVRScreenFade>().FadeToNewLevel(sceneToLoadName);
 		}
 

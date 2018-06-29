@@ -11,7 +11,7 @@ public class WaterBall_Script : MonoBehaviour {
 
 	public float upNDownForce = 1.0f;
 	public float fallTime = 10.0f;
-	Vector3 currentVelo;
+	float currentVertical;
 
 	// Use this for initialization
 	void Start () {
@@ -39,9 +39,8 @@ public class WaterBall_Script : MonoBehaviour {
 			}
 		}
 		if(floatTimer < fallTime){
-			currentVelo = this.GetComponent<Rigidbody>().velocity;
-			currentVelo.y = timer*upNDownForce;
-			this.GetComponent<Rigidbody>().velocity = currentVelo;
+			currentVertical = timer*upNDownForce;
+			this.transform.position = transform.up*currentVertical;
 		}else{
 			this.GetComponent<Rigidbody>().useGravity = true;
 		}
