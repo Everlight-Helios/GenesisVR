@@ -76,4 +76,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _node_1468: {r: 0, g: 1, b: 0.9586208, a: 1}
+<<<<<<< HEAD
     - _node_3394: {r: 0, g: 0, b: 0, a: 1}
+=======
+    - _node_3394: {r: 0.07672414, g: 0, b: 0.6544118, a: 1}
+>>>>>>> origin/Niki
