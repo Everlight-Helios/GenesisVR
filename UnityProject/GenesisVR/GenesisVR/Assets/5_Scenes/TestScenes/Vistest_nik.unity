@@ -186,11 +186,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4435253642346014, guid: 1a43f809a17a82e438dc9d4560221d58, type: 2}
       propertyPath: m_LocalRotation.x
+<<<<<<< HEAD
+      value: -0.0000014603138
+=======
       value: 0
+>>>>>>> origin/Evelyn_Testing
       objectReference: {fileID: 0}
     - target: {fileID: 4435253642346014, guid: 1a43f809a17a82e438dc9d4560221d58, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4435253642346014, guid: 1a43f809a17a82e438dc9d4560221d58, type: 2}
       propertyPath: m_LocalRotation.z
@@ -222,6 +226,17 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
+<<<<<<< HEAD
+    - target: {fileID: 100000, guid: fc897bde7d3df08478e8cfcfae4c17b2, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: fc897bde7d3df08478e8cfcfae4c17b2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+=======
+>>>>>>> origin/Evelyn_Testing
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1a43f809a17a82e438dc9d4560221d58, type: 2}
   m_IsPrefabParent: 0
@@ -301,7 +316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1306798525
 Light:
   m_ObjectHideFlags: 0

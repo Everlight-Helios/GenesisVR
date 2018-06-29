@@ -1,9 +1,18 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8d5a699332eb8a9499077fa4bcd4e0a0
 folderAsset: yes
 timeCreated: 1459757852
 licenseType: Store
 DefaultImporter:
+=======
+guid: 9c1ae996388c66b479463755d0a35108
+folderAsset: yes
+timeCreated: 1529486147
+licenseType: Free
+DefaultImporter:
+  externalObjects: {}
+>>>>>>> origin/Astrid
   userData: 
   assetBundleName: 
   assetBundleVariant: 

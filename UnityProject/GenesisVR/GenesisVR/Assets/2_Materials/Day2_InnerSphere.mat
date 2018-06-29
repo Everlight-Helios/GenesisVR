@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Day2_InnerSphere
-  m_Shader: {fileID: 4800000, guid: 77aff4f4caadff8438f758e14adde18c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 19a1982c6e7263246abfcd2370d4156a, type: 3}
   m_ShaderKeywords: _EMISSION
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -63,6 +63,9 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.465
     - _DetailNormalMapScale: 1
+    - _Distribution: 1
+    - _Distribution1: 1
+    - _Distribution2: 1
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
@@ -74,12 +77,19 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StartPoint: -0.62
+    - _StartPoint1: 0.01
+    - _StartPoint2: -0.5
     - _TopLine: 0.5
     - _UVSec: 0
     - _ZWrite: 1
+    - __dirty: 0
     m_Colors:
     - _BelowBottomColor: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0, g: 0, b: 0, a: 0}
+    - _Color2: {r: 0.07419257, g: 0, b: 0.22794116, a: 0}
+    - _Color3: {r: 0.3241377, g: 0, b: 1, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _GradientBottomColor: {r: 0, g: 0, b: 0, a: 0}
     - _GradientTopColor: {r: 1, g: 1, b: 1, a: 1}
