@@ -16,8 +16,9 @@ public class BoidsManager : UnitySingletonPersistent<BoidsManager> {
 
     private void Start()
     {
-
-		Birds = sp._spawnBirds;
+		if(sp._spawnBirds){
+			Birds = sp._spawnBirds;
+		}
     }
 
     public static int MaxFlockSize {
