@@ -9,9 +9,12 @@ public class WaterBall_Script : MonoBehaviour {
 	public bool floatTimerStart = false;
 	bool addTime = true;
 
-	public float upNDownForce = 1.0f;
+	public float wobble = 1.0f;
 	public float fallTime = 10.0f;
-	float currentVertical;
+	Vector3 currentVertical;
+	Vector3 currentPos;
+	Vector3 newPosUp;
+	Vector3 newPosDown;
 
 	// Use this for initialization
 	void Start () {
@@ -25,25 +28,29 @@ public class WaterBall_Script : MonoBehaviour {
 		//highPos = startPos + new Vector3(0,1.0f,0);
 		if(floatTimerStart){
 			floatTimer += Time.deltaTime;
+			if(addTime){
+				timer += Time.deltaTime;
+				if(timer > 1.0f){
+					addTime = false;
+				}
+			} else {
+				timer -= Time.deltaTime;
+				if(timer < 0.0f){
+					addTime = true;
+				}
+			}
+			if(floatTimer < fallTime){
+				currentVertical = this.transform.up*wobble;
+				newPosUp = this.transform.position + currentVertical;
+				newPosDown = this.transform.position - currentVertical;
+				currentPos = Vector3.Lerp(newPosDown, newPosUp, timer);
+				transform.Find("Visual").transform.position = Vector3.Lerp(transform.Find("Visual").transform.position, currentPos, Time.deltaTime);
+			}else{
+				this.GetComponent<Rigidbody>().useGravity = true;
+			}
 		}
 
-		if(addTime){
-			timer += Time.deltaTime;
-			if(timer > 1.0f){
-				addTime = false;
-			}
-		} else {
-			timer -= Time.deltaTime;
-			if(timer < -1.0f){
-				addTime = true;
-			}
-		}
-		if(floatTimer < fallTime){
-			currentVertical = timer*upNDownForce;
-			this.transform.position = transform.up*currentVertical;
-		}else{
-			this.GetComponent<Rigidbody>().useGravity = true;
-		}
+		
 	}
 
 	private void OnDisable()

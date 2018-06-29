@@ -21,8 +21,8 @@ public class Surface_Script : MonoBehaviour {
 		if(other.tag == "WaterBall"){
 			if(other.transform.position.y <= this.transform.position.y){
 				GameObject currentRipple = GameObject.Instantiate(ripple, new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z), ripple.transform.rotation);
-				currentRipple.GetComponent<AudioSource>().clip = other.gameObject.GetComponent<AudioSource>().clip;
-				other.gameObject.SetActive(false);
+				currentRipple.GetComponent<AudioSource>().clip = other.transform.parent.gameObject.GetComponent<AudioSource>().clip;
+				other.transform.parent.gameObject.SetActive(false);
 			}
 		}
 	}

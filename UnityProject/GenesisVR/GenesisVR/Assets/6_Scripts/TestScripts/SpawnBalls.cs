@@ -129,6 +129,7 @@ public class SpawnBalls : MonoBehaviour {
 				_currentRigidbody = _currentBall.GetComponent<Rigidbody>();
 				_currentMaterial.SetColor("_Color", _currentColor);
 				_currentBall.transform.position = _spawnLocation.position;
+				_currentBall.transform.rotation = _spawnLocation.rotation;
 				_currentBall.name = "Ball" + _currentBallNum;
 				//print(_currentBall.name);
 				_currentBallNum +=1;
@@ -175,11 +176,10 @@ public class SpawnBalls : MonoBehaviour {
 			{
 				_timeRecording += Time.deltaTime;
 
-				if (_micAmplitude > _highestAmplitude)
-				{
+				if (_micAmplitude > _highestAmplitude){
 					_highestAmplitude = _micAmplitude;
-					
 				}
+				
 				
 				_currentBall.transform.position = _spawnLocation.position + (0.25f/(_growTimeMax/10)) * this.transform.forward * _timeRecording;
 				_ballSizeCurrent = Mathf.Lerp(_ballsizeMinMax.x, _ballsizeMinMax.y, Mathf.Clamp01(_timeRecording / _growTimeMax));
