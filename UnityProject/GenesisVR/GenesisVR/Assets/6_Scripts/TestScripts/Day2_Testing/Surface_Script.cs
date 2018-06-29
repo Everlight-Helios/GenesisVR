@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Surface_Script : MonoBehaviour {
 
-	public GameObject ripple;
+	public GameObject puddle;
 
 	// Use this for initialization
 	void Start () {
@@ -20,8 +20,9 @@ public class Surface_Script : MonoBehaviour {
 	{
 		if(other.tag == "WaterBall"){
 			if(other.transform.position.y <= this.transform.position.y){
-				GameObject currentRipple = GameObject.Instantiate(ripple, new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z), ripple.transform.rotation);
-				currentRipple.GetComponent<AudioSource>().clip = other.transform.parent.gameObject.GetComponent<AudioSource>().clip;
+				GameObject currentPuddle = GameObject.Instantiate(puddle, new Vector3(other.transform.position.x, this.transform.position.y, other.transform.position.z), puddle.transform.rotation);
+				currentPuddle.GetComponent<AudioSource>().clip = other.transform.parent.gameObject.GetComponent<AudioSource>().clip;
+				currentPuddle.GetComponent<Day2_Puddle_Script>().startingScale = other.transform.parent.localScale;
 				other.transform.parent.gameObject.SetActive(false);
 			}
 		}

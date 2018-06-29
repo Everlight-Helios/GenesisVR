@@ -117,7 +117,7 @@ public class SpawnBalls : MonoBehaviour {
 		
 
 		
-        _micAmplitude = SIC.inputData.amp01;
+        _micAmplitude = SIC.inputData.relativeAmplitude;
 		if(spawningBalls){
 			if ((_micAmplitude > 0) && (!_isSpeaking)) //start speaking SPAWN
 			{

@@ -11,6 +11,7 @@ public class WaterBall_Script : MonoBehaviour {
 
 	public float wobble = 1.0f;
 	public float fallTime = 10.0f;
+	public bool mirror = true;
 	Vector3 currentVertical;
 	Vector3 currentPos;
 	Vector3 newPosUp;
@@ -45,8 +46,17 @@ public class WaterBall_Script : MonoBehaviour {
 				newPosDown = this.transform.position - currentVertical;
 				currentPos = Vector3.Lerp(newPosDown, newPosUp, timer);
 				transform.Find("Visual").transform.position = Vector3.Lerp(transform.Find("Visual").transform.position, currentPos, Time.deltaTime);
+				
 			}else{
 				this.GetComponent<Rigidbody>().useGravity = true;
+			}
+			if(mirror){
+				transform.Find("Mirror").transform.position = this.transform.position + new Vector3(0, this.transform.position.y*-2+transform.Find("Visual").transform.localPosition.y*-1, 0);
+				if(transform.Find("Mirror").transform.position.y >= 0){
+					transform.Find("Mirror").transform.position = new Vector3(transform.Find("Mirror").transform.position.x, -0.01f, transform.Find("Mirror").transform.position.z);
+				}
+			} else {
+				transform.Find("Mirror").GetComponent<Renderer>().enabled = false;
 			}
 		}
 
@@ -59,6 +69,9 @@ public class WaterBall_Script : MonoBehaviour {
 		timer = 0.0f;
 		floatTimerStart = false;
 		floatTimer = 0.0f;
+		transform.Find("Visual").transform.localPosition = new Vector3(0,0,0);
+		transform.Find("Mirror").transform.localPosition = new Vector3(0,0,0);
+		
 		this.GetComponent<Rigidbody>().useGravity = false;
 	}
 }
