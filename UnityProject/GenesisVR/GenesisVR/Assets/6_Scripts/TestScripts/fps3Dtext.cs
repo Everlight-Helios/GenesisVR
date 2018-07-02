@@ -5,6 +5,7 @@ using UnityEngine;
 public class fps3Dtext : MonoBehaviour {
 
 	float deltaTime;
+	[HideInInspector]public bool LoadNextScene = false;
 
 	// Use this for initialization
 	void Start () {
@@ -18,6 +19,6 @@ public class fps3Dtext : MonoBehaviour {
 		float msec = Mathf.Round(deltaTime * 1000.0f);
 		float fps = Mathf.Round(1.0f / deltaTime);
 		//float recTime = Mathf.Round(GameObject.Find("SIC").GetComponent<AudioSource>().time);
-		this.GetComponent<TextMesh>().text = "MS: " + msec + "\nFPS: " + fps;
+		this.GetComponent<TextMesh>().text = "MS: " + msec + "\nFPS: " + fps + "\nLoad Next Scene: " + LoadNextScene;
 	}
 }

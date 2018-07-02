@@ -6,12 +6,13 @@ public class Day2_Puddle_Script : MonoBehaviour {
 
 	public Vector3 startingScale;
 	public float toGrowScaleMultiplier;
-	Vector3 endScale;
+	[HideInInspector]public Vector3 endScale;
 	//Vector3 currentScale;
 
 	public float timeToGrow;
 	Color startingColor;
-	float timer = 0.0f;
+	[HideInInspector]public float timer = 0.0f;
+	bool puddleAddedToPool = false;
 
 
 	// Use this for initialization
@@ -29,7 +30,6 @@ public class Day2_Puddle_Script : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//this.transform.localScale = startingScale;
 		
 		timer += Time.deltaTime/timeToGrow;
 
@@ -45,7 +45,10 @@ public class Day2_Puddle_Script : MonoBehaviour {
 				Destroy(this.gameObject);
 			}
 		}
-
+		if(this.tag == "WaterPuddle" && timer>=1.0f && puddleAddedToPool == false){
+			GameObject.Find("PuddleChecker").GetComponent<PuddleChecker>().currentFullGrownPuddles +=1;
+			puddleAddedToPool = true;
+		}
 
 	}
 }

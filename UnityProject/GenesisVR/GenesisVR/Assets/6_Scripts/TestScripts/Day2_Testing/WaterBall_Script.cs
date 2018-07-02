@@ -71,7 +71,7 @@ public class WaterBall_Script : MonoBehaviour {
 		floatTimer = 0.0f;
 		transform.Find("Visual").transform.localPosition = new Vector3(0,0,0);
 		transform.Find("Mirror").transform.localPosition = new Vector3(0,0,0);
-		
 		this.GetComponent<Rigidbody>().useGravity = false;
+		//print(this.gameObject.name + "Disabled");
 	}
 }
