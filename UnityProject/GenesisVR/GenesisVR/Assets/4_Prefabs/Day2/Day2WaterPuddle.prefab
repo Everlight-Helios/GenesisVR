@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114528160335265046}
   m_Layer: 0
   m_Name: Day2WaterPuddle
-  m_TagString: Untagged
+  m_TagString: WaterPuddle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

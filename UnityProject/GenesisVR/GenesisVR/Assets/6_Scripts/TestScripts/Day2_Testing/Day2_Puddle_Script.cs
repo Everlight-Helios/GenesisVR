@@ -10,17 +10,21 @@ public class Day2_Puddle_Script : MonoBehaviour {
 	//Vector3 currentScale;
 
 	public float timeToGrow;
+	Color startingColor;
 	float timer = 0.0f;
 
 
 	// Use this for initialization
 	void Start () {
-		if(GetComponent<AudioSource>().clip){
+		if(this.GetComponent<AudioSource>()){
 			PlayAudioFaded.FadeInNOut(GetComponent<AudioSource>(), GetComponent<AudioSource>().clip.length/2, GetComponent<AudioSource>().clip.length/2);
 		}
 		this.transform.localScale = startingScale;
 		endScale = startingScale*toGrowScaleMultiplier;
 		timer = 0.0f;
+		if(this.tag == "WaterRipple"){
+			startingColor = this.transform.Find("Ripple1").GetComponent<Renderer>().material.GetColor("_TintColor");
+		}
 	}
 	
 	// Update is called once per frame
@@ -30,6 +34,17 @@ public class Day2_Puddle_Script : MonoBehaviour {
 		timer += Time.deltaTime/timeToGrow;
 
 		this.transform.localScale = Vector3.Lerp(startingScale, endScale, timer);
+
+		if(this.tag == "WaterRipple"){
+			Color currentColor = this.transform.Find("Ripple1").GetComponent<Renderer>().material.GetColor("_TintColor");
+			currentColor.a = startingColor.a-startingColor.a*timer;
+			this.transform.Find("Ripple1").GetComponent<Renderer>().material.SetColor("_TintColor", currentColor);
+			this.transform.Find("Ripple2").GetComponent<Renderer>().material.SetColor("_TintColor", currentColor);
+			this.transform.Find("Ripple3").GetComponent<Renderer>().material.SetColor("_TintColor", currentColor);
+			if (timer >= 1.0f){
+				Destroy(this.gameObject);
+			}
+		}
 
 
 	}
