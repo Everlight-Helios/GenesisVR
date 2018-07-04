@@ -20,6 +20,8 @@ public class TargetFlowfield : Flowfield3DBase {
 	// Update is called once per frame
 	void Update () {
 		
+		movementOffset += Movement * Time.deltaTime;
+		finalOffset = movementOffset + Offset;
 
 		var field = Data.Field;
 
@@ -37,14 +39,26 @@ public class TargetFlowfield : Flowfield3DBase {
 			{
 				for (int z = 0; z < zCount; z++)
 				{
+
+					var scaledX = finalOffset.x + x * scaledXFrequency;
+					var scaledY = finalOffset.y + y * scaledYFrequency;
+					var scaledZ = finalOffset.z + z * scaledZFrequency;
+
+					var xAmount = Mathf.Rad2Deg * (Mathf.PerlinNoise (scaledX, scaledY) * (Mathf.PI * 2f));
+					var yAmount = Mathf.Rad2Deg * (Mathf.PerlinNoise (scaledY, scaledZ) * (Mathf.PI * 2f));
+					var zAmount = Mathf.Rad2Deg * (Mathf.PerlinNoise (scaledZ, scaledX) * (Mathf.PI * 2f));
+
 					Vector3 pointPos = Data.GetFieldIndexPosition(x,y,z);
 					Vector3 wantedDirection = target.transform.position - pointPos;
-					wantedDirection = Vector3.ClampMagnitude(wantedDirection, 1.0f);
+					Vector3 clampedDirection = Vector3.ClampMagnitude(wantedDirection, 1.0f);
+					Vector3 noisedDirection = Quaternion.Euler (xAmount, yAmount, zAmount) * clampedDirection;
 
-					field[x, y, z] = wantedDirection;
+					field[x, y, z] = noisedDirection;
 				}
 			}
 		}
+
+		Data.SetAll (field);
 
 		if (DrawDebug)
 			Draw ();
