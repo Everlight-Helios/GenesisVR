@@ -58,7 +58,7 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distribution: 0.065
+    - _Distribution: 0.35
     - _Distribution1: 0.15
     - _Distribution2: 0.32
     - _DstBlend: 0
@@ -72,7 +72,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StartPoint: 0.3
+    - _StartPoint: -0.18
     - _StartPoint1: 0.318
     - _StartPoint2: 0.19
     - _UVSec: 0
@@ -81,8 +81,8 @@ Material:
     - _node_778_copy: 0.8
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 1, g: 0.8235294, b: 0.8235294, a: 0}
-    - _Color2: {r: 1, g: 0.53676474, b: 0.92971593, a: 0}
+    - _Color1: {r: 1, g: 0.9537526, b: 0.5808823, a: 0}
+    - _Color2: {r: 1, g: 0.6911765, b: 0.940365, a: 0}
     - _Color3: {r: 1, g: 0.6882353, b: 0.2205882, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _node_1468: {r: 1, g: 0.8161765, b: 0.92647064, a: 1}

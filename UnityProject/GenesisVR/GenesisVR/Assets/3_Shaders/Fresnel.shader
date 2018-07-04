@@ -1,12 +1,12 @@
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "[Test]/test06_astrid"
+Shader "Fresnel"
 {
 	Properties
 	{
-		_EdgeLength ( "Edge length", Range( 2, 50 ) ) = 5
-		_Colorbase("Color base", Color) = (1,0,0,0)
-		_Colorrim("Color rim", Color) = (0,0.9586205,1,0)
+		_EdgeLength ( "Edge length", Range( 2, 50 ) ) = 2
+		_Colorbase("Color base", Color) = (1,0.5514706,0.950507,0)
+		_Colorrim("Color rim", Color) = (0.8161765,0.9923934,1,0)
 		_Power("Power", Range( 0 , 10)) = 1
 		_Bias("Bias", Range( 0 , 1)) = 0.5
 		_Intensity("Intensity", Range( 0 , 20)) = 0.5
@@ -131,16 +131,17 @@ Shader "[Test]/test06_astrid"
 }
 /*ASEBEGIN
 Version=15401
-1927;29;1906;1004;1395.332;349.0385;1;False;False
-Node;AmplifyShaderEditor.RangedFloatNode;4;-1147.242,245.2057;Float;False;Property;_Power;Power;7;0;Create;True;0;0;False;0;1;5.7;0;10;0;1;FLOAT;0
+1922;28;1906;1004;1449.332;455.0385;1;True;False
+Node;AmplifyShaderEditor.RangedFloatNode;4;-1147.242,245.2057;Float;False;Property;_Power;Power;7;0;Create;True;0;0;False;0;1;10;0;10;0;1;FLOAT;0
 Node;AmplifyShaderEditor.TFHCRemapNode;13;-871.55,244.1843;Float;False;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;10;False;3;FLOAT;10;False;4;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;3;-1146.242,164.2053;Float;False;Property;_Intensity;Intensity;9;0;Create;True;0;0;False;0;0.5;3.4;0;20;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;3;-1146.242,164.2053;Float;False;Property;_Intensity;Intensity;9;0;Create;True;0;0;False;0;0.5;0.7;0;20;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;2;-1147.242,83.2052;Float;False;Property;_Bias;Bias;8;0;Create;True;0;0;False;0;0.5;0;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.FresnelNode;1;-655.2396,42.2052;Float;False;Standard;WorldNormal;ViewDir;False;5;0;FLOAT3;0,0,1;False;4;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;5;False;1;FLOAT;0
-Node;AmplifyShaderEditor.ColorNode;86;-626.7497,-296.2398;Float;False;Property;_Colorbase;Color base;5;0;Create;True;0;0;False;0;1,0,0,0;0,0.04827564,1,0;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ColorNode;85;-626.1877,-127.9927;Float;False;Property;_Colorrim;Color rim;6;0;Create;True;0;0;False;0;0,0.9586205,1,0;1,0,0,0;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;86;-626.7497,-296.2398;Float;False;Property;_Colorbase;Color base;5;0;Create;True;0;0;False;0;1,0.5514706,0.950507,0;1,0.7058823,0.8945233,0;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.ColorNode;85;-626.1877,-127.9927;Float;False;Property;_Colorrim;Color rim;6;0;Create;True;0;0;False;0;0.8161765,0.9923934,1,0;0.8897059,0.995436,1,0;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
+Node;AmplifyShaderEditor.SaturateNode;91;-191.332,103.9615;Float;False;1;0;COLOR;0,0,0,0;False;1;COLOR;0
 Node;AmplifyShaderEditor.LerpOp;87;-190.332,-7.038513;Float;False;3;0;COLOR;0,0,0,0;False;1;COLOR;0,0,0,0;False;2;FLOAT;0;False;1;COLOR;0
-Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;-1,-7;Float;False;True;6;Float;ASEMaterialInspector;0;0;Standard;[Test]/test06_astrid;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Translucent;0.5;True;True;0;False;Opaque;;Transparent;ForwardOnly;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;True;2;5;10;25;False;0.5;True;0;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;-1;False;-1;-1;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;0;0;False;0;0;False;-1;-1;0;False;-1;0;0;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;-1,-7;Float;False;True;6;Float;ASEMaterialInspector;0;0;Standard;Fresnel;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;Back;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Translucent;0.5;True;True;0;False;Opaque;;Transparent;ForwardOnly;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;True;2;2;10;25;False;0.5;True;0;5;False;-1;10;False;-1;0;0;False;-1;0;False;-1;-1;False;-1;-1;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;0;0;False;0;0;False;-1;-1;0;False;-1;0;0;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
 WireConnection;13;0;4;0
 WireConnection;1;1;2;0
 WireConnection;1;2;3;0
@@ -150,4 +151,4 @@ WireConnection;87;1;85;0
 WireConnection;87;2;1;0
 WireConnection;0;0;87;0
 ASEEND*/
-//CHKSM=0730D3CBEBD701DDABC25F6A9FBB527125EE2C5E
+//CHKSM=7E100E11DA1C4DBABCFCE631E4E0B8D3AE466690

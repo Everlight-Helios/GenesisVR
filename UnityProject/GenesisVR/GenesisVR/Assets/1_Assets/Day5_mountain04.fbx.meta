@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 972f8069f71309c4bb6ab7ff63db5056
-timeCreated: 1529070891
+guid: 0d0249520b2e2a9428166745778aec1b
+timeCreated: 1530545495
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -10,7 +10,7 @@ ModelImporter:
     2100000: No Name
     2300000: //RootNode
     3300000: //RootNode
-    4300000: 201
+    4300000: Landscape.005
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 1000
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -62,7 +62,7 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 180
     normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
