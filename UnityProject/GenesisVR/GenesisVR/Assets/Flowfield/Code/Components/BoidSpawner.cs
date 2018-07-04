@@ -9,15 +9,17 @@ public class BoidSpawner : MonoBehaviour
 	public int perFrame = 3;
 	public FlowFieldBoid boid;
 	public Flowfield3DBase target;
-
+    public static int fishcount = 0;
 	private IEnumerator Start ()
 	{
 		while (true)
 		{
 			for (int i = 0; i < perFrame; i++)
 			{
+                fishcount++;
 				var newBoid = Instantiate (boid, transform.position + Random.insideUnitSphere * radius, Quaternion.identity);
 				newBoid.Target = target;
+                newBoid.name= ("Fish" + fishcount);
 			}
 			yield return null;
 		}

@@ -5,11 +5,17 @@ public class FlowFieldBoid : MonoBehaviour
 	public float MaxSpeed = 1f;
 	public float MaxForce = 4f;
 	public Flowfield3DBase Target;
+    GameObject tarLook;
 
 	public Vector3 velocity { get; private set; }
 	public Vector3 acceleration { get; private set; }
 
-	private void Update ()
+    private void Awake()
+    {
+        tarLook = GameObject.FindWithTag("target"); //target to look at
+
+    }
+    private void Update ()
 	{
 		Follow (Target);
 
@@ -17,6 +23,10 @@ public class FlowFieldBoid : MonoBehaviour
 		velocity = Vector3.ClampMagnitude (velocity, MaxSpeed);
 		transform.position += velocity * Time.deltaTime;
 		acceleration = Vector3.zero;
+        if (tarLook != null)
+        {
+            transform.LookAt(tarLook.transform);
+        }
 
 		if (Target.Data.IsPointOutsideBounds (transform.position))
 			Destroy (gameObject);

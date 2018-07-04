@@ -10,10 +10,11 @@ public class _TargetRayTest : MonoBehaviour {
 			Vector3 ray = transform.forward;
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position,ray, out hit, 100))
+        if (Physics.Raycast(transform.position,ray, out hit,Mathf.Infinity))
         {
-				   	Debug.DrawLine(transform.position, hit.point);
-						//Debug.Log(hit.point);
-					}
+		  	Debug.DrawLine(transform.position, hit.point);
+			Debug.Log(hit.point + " hit point");
+            Debug.Log("distance : " + hit.distance);
+		}
 	}
 }

@@ -97,3 +97,4 @@ MonoBehaviour:
   MaxSpeed: 2
   MaxForce: 1
   Target: {fileID: 0}
+  tarLook: {fileID: 0}
