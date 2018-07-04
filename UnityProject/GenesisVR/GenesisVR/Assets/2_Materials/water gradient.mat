@@ -6,16 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: blue gradient
-  m_Shader: {fileID: 4800000, guid: 19a1982c6e7263246abfcd2370d4156a, type: 3}
+  m_Name: water gradient
+  m_Shader: {fileID: 4800000, guid: 1397d172beeb9e240ad61a3233780b08, type: 3}
   m_ShaderKeywords: 
-<<<<<<< HEAD
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
-=======
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 1
->>>>>>> origin/Evelyn_Testing
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -63,8 +58,9 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _Distribution1: 0.2
-    - _Distribution2: 0.2
+    - _Distribution: 0.055
+    - _Distribution1: 0.15
+    - _Distribution2: 0.32
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -76,21 +72,20 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _StartPoint1: 0.16
-    - _StartPoint2: -0.03
+    - _StartPoint: -0.473
+    - _StartPoint1: 0.318
+    - _StartPoint2: 0.19
     - _UVSec: 0
     - _ZWrite: 1
-<<<<<<< HEAD
     - __dirty: 0
-=======
->>>>>>> origin/Evelyn_Testing
-    - _node_778_copy: 0.7
+    - _node_778_copy: 0.8
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.4352941, g: 1, b: 0.9529412, a: 0}
-    - _Color2: {r: 1, g: 0.4941176, b: 0.945098, a: 0}
+    - _Color1: {r: 0.32115054, g: 0.99264705, b: 0.9648609, a: 0}
+    - _Color2: {r: 0.054065738, g: 0.23900782, b: 0.9191176, a: 0}
     - _Color3: {r: 1, g: 0.6882353, b: 0.2205882, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+<<<<<<< HEAD:UnityProject/GenesisVR/GenesisVR/Assets/2_Materials/blue gradient.mat
     - _node_1468: {r: 0, g: 1, b: 0.9586208, a: 1}
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -104,3 +99,7 @@ Material:
     - _node_3394: {r: 0, g: 0, b: 0, a: 1}
 >>>>>>> origin/Evelyn_Testing
 >>>>>>> origin/Niki
+=======
+    - _node_1468: {r: 1, g: 0.8161765, b: 0.92647064, a: 1}
+    - _node_3394: {r: 0.7058823, g: 1, b: 0.9269777, a: 1}
+>>>>>>> origin/Niki:UnityProject/GenesisVR/GenesisVR/Assets/2_Materials/water gradient.mat
