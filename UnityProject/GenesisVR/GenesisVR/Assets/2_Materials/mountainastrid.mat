@@ -65,13 +65,13 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.729
     - _GlossyReflections: 1
-    - _Intensity: 1.9
+    - _Intensity: 10
     - _Metallic: -0.17
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Opacity: 1
     - _Parallax: 0.02
-    - _Power: 4.59
+    - _Power: 5
     - _Smoothness: 7.6
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -91,6 +91,6 @@ Material:
     - _Color: {r: 0.8014706, g: 0.2769788, b: 0.33123636, a: 1}
     - _Color0: {r: 0, g: 0.5448277, b: 1, a: 0}
     - _ColorFresnel: {r: 1, g: 0.4758622, b: 0, a: 0}
-    - _Colorbase: {r: 0.7647059, g: 0.23053633, b: 0.37420964, a: 0}
-    - _Colorrim: {r: 1, g: 0.95050704, b: 0.5514706, a: 0}
+    - _Colorbase: {r: 0.7647059, g: 0.2305362, b: 0.3742095, a: 1}
+    - _Colorrim: {r: 1, g: 0.950507, b: 0.5514706, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

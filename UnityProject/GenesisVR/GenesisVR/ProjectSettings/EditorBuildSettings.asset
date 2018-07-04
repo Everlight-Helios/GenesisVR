@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/5_Scenes/TestScenes/gptest_evelyn/Day2.unity
-    guid: 12756a41e4024c344abfd625be7fc198
+    path: Assets/5_Scenes/TestScenes/vistest_colour01_astrid.unity
+    guid: b60102524627c3c43a4c09d34653859d
