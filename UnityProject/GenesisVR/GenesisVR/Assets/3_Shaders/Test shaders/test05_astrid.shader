@@ -139,16 +139,16 @@ Shader "[Test]/test05_astrid"
 }
 /*ASEBEGIN
 Version=15401
-7;29;1906;1004;2251.359;640.0387;1.300786;True;False
+1927;27;1906;1004;2127.784;671.2574;1.300786;True;False
 Node;AmplifyShaderEditor.RangedFloatNode;4;-2174.757,226.091;Float;False;Property;_Power;Power;5;0;Create;True;0;0;False;0;1;4.53;0;10;0;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;3;-2173.757,145.0906;Float;False;Property;_Intensity;Intensity;7;0;Create;True;0;0;False;0;0.5;6.7;0;20;0;1;FLOAT;0
-Node;AmplifyShaderEditor.RangedFloatNode;2;-2174.757,64.09048;Float;False;Property;_Bias;Bias;6;0;Create;True;0;0;False;0;0.5;0.238;0;1;0;1;FLOAT;0
 Node;AmplifyShaderEditor.TFHCRemapNode;13;-1899.067,225.0696;Float;False;5;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;10;False;3;FLOAT;10;False;4;FLOAT;0;False;1;FLOAT;0
-Node;AmplifyShaderEditor.FresnelNode;1;-1660.755,2.090556;Float;False;Standard;WorldNormal;ViewDir;False;5;0;FLOAT3;0,0,1;False;4;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;5;False;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;2;-2174.757,64.09048;Float;False;Property;_Bias;Bias;6;0;Create;True;0;0;False;0;0.5;0.238;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.RangedFloatNode;3;-2173.757,145.0906;Float;False;Property;_Intensity;Intensity;7;0;Create;True;0;0;False;0;0.5;6.7;0;20;0;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;15;-1394.607,310.4437;Float;False;Constant;_Notransparency;No transparency;7;0;Create;True;0;0;False;0;1;0;0;0;0;1;FLOAT;0
+Node;AmplifyShaderEditor.FresnelNode;1;-1660.755,2.090556;Float;False;Standard;WorldNormal;ViewDir;False;5;0;FLOAT3;0,0,1;False;4;FLOAT3;0,0,0;False;1;FLOAT;0;False;2;FLOAT;1;False;3;FLOAT;5;False;1;FLOAT;0
 Node;AmplifyShaderEditor.ColorNode;12;-1054.932,-392.6491;Float;False;Property;_Color;Color;10;0;Create;True;0;0;False;0;1,0,0,0;1,0.6299188,0.3455882,1;0;5;COLOR;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
-Node;AmplifyShaderEditor.ToggleSwitchNode;14;-1151.06,258.3693;Float;False;Property;_Transparentbiasmustbe1;Transparent? (bias must be <1);11;0;Create;True;0;0;False;0;0;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;9;-1204.185,442.8217;Float;False;Property;_Opacity;Opacity;9;0;Create;True;0;0;False;0;0;1;0;1;0;1;FLOAT;0
+Node;AmplifyShaderEditor.ToggleSwitchNode;14;-1151.06,258.3693;Float;False;Property;_Transparentbiasmustbe1;Transparent? (bias must be <1);11;0;Create;True;0;0;False;0;0;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;76;-752.854,-278.4204;Float;False;2;2;0;COLOR;0,0,0,0;False;1;FLOAT;0;False;1;COLOR;0
 Node;AmplifyShaderEditor.SimpleMultiplyOpNode;8;-831.1613,259.6693;Float;False;2;2;0;FLOAT;0;False;1;FLOAT;0;False;1;FLOAT;0
 Node;AmplifyShaderEditor.RangedFloatNode;6;-694.4717,-28.40921;Float;False;Constant;_Noemission;No emission;4;0;Create;True;0;0;False;0;0;0;0;0;0;1;FLOAT;0
@@ -175,4 +175,4 @@ WireConnection;0;0;77;0
 WireConnection;0;2;5;0
 WireConnection;0;9;70;0
 ASEEND*/
-//CHKSM=5481A2BDA0BEAEF95984A2519B5BA5E3A0CA77AD
+//CHKSM=891F444BF158BF081BC43C088D6232E1F0211A6E
