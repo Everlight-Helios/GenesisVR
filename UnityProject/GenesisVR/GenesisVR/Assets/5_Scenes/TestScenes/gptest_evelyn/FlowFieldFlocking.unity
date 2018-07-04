@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e294c2bcc4b79941b805f50a1ea059f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 10
+  radius: 20
   lifetime: 1
   perFrame: 1
   boid: {fileID: 114938115057019552, guid: 88262e627c276cf48ad5cc8d07b9638b, type: 2}
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41550943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 20, y: 20, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -236,7 +236,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180995710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: 14.1, y: 10, z: 20.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -452,11 +452,11 @@ MonoBehaviour:
   XCount: 20
   YCount: 20
   ZCount: 20
-  Scale: 1
+  Scale: 2
   target: {fileID: 180995710}
   DrawDebug: 1
   Frequency: 1
-  Movement: {x: 0.2, y: 0, z: 0}
+  Movement: {x: 0.1, y: -0.1, z: 0.1}
   Offset: {x: 0, y: 0, z: 0}
 --- !u!4 &343231181
 Transform:
