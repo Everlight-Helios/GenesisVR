@@ -9,9 +9,9 @@ public class flowTest : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		speed = 1;
-		width = 20;
-		height = 20;
+		//speed = 1;
+		//width = 5;
+		//height = 5;
 	}
 
 	// Update is called once per frame

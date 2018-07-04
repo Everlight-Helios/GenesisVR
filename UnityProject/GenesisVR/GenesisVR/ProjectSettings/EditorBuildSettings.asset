@@ -6,5 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/5_Scenes/TestScenes/Vistest_nik.unity
-    guid: 51fc98d07bca2b746b5b3ac194d196fb
+    path: Assets/5_Scenes/TestScenes/gptest_evelyn/Day2.unity
+    guid: 12756a41e4024c344abfd625be7fc198
