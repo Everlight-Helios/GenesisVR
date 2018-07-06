@@ -236,11 +236,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 180995710}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-<<<<<<< HEAD
   m_LocalPosition: {x: 10, y: 10, z: 33.6}
-=======
   m_LocalPosition: {x: 14.1, y: 10, z: 20.8}
->>>>>>> origin/Evelyn_Testing
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -514,11 +511,8 @@ MonoBehaviour:
   XCount: 20
   YCount: 20
   ZCount: 20
-<<<<<<< HEAD
   Scale: 5
-=======
   Scale: 2
->>>>>>> origin/Evelyn_Testing
   target: {fileID: 180995710}
   DrawDebug: 1
   Frequency: 1

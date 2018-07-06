@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFreq: 100
   maxFreq: 300
-  minVolume: -10
-  maxVolume: 10
+  minVolume: -20
+  maxVolume: 20
   minY: -5
   maxY: 5
   colors: []

@@ -7,7 +7,7 @@ public class _TargetRayTest : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-			Vector3 ray = transform.forward;
+		Vector3 ray = transform.forward;
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position,ray, out hit,Mathf.Infinity))

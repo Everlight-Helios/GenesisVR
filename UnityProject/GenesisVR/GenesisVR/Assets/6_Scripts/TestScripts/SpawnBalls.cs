@@ -112,14 +112,10 @@ public class SpawnBalls : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //pitch
-
+        
         _micPitch =  SIC.inputData.relativeFrequency;
-
-		
-
-		
         _micAmplitude = SIC.inputData.relativeAmplitude;
+
 		if(spawningBalls){
 			if ((_micAmplitude > 0) && (!_isSpeaking)) //start speaking SPAWN
 			{
