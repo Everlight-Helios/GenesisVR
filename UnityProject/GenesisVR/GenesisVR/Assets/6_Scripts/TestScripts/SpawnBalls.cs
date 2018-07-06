@@ -76,7 +76,7 @@ public class SpawnBalls : MonoBehaviour {
 	[HideInInspector]public bool spawningBalls = true;
 
 	bool waterBalls = false;
-    
+   
 
 
     // Use this for initialization
@@ -91,7 +91,9 @@ public class SpawnBalls : MonoBehaviour {
 		if(_ballPrefab.name == "WaterBall"){
 			waterBalls = true;
 		}
+        
 
+        //
         for (int i = 0; i < _ballPoolAmount; i++)
         {
             GameObject obj = (GameObject)Instantiate(_ballPrefab);

@@ -1,6 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoundInput;
+
+/* To do:
+ * - fix launching ball
+ * - add lifetime to ball
+ * - explode ball
+ * - add particles to ball
+ * - leave transform.pos for target on Destroy();
+ * - instantiate FishBoid with target and num;
+ */
+
 
 public class BoidSpawner : MonoBehaviour
 {
@@ -10,7 +21,10 @@ public class BoidSpawner : MonoBehaviour
 	public FlowFieldBoid boid;
 	public Flowfield3DBase target;
     public static int fishcount = 0;
-	private IEnumerator Start ()
+    
+    
+
+    private IEnumerator Start ()
 	{
 		while (true)
 		{
