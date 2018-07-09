@@ -53,7 +53,7 @@ public class TerrainDeformer : MonoBehaviour {
                 float proportion = dist_to_target / maxDist;
 				//print(dist_to_target + " -> " + proportion);
  
-                height[tempX,tempY] += 0.0005f * heightIncrease * (1.0f - proportion) * Random.Range(0.1f, 1.0f);
+                height[tempX,tempY] += 0.005f * heightIncrease * (1.0f - proportion) * Random.Range(0.01f, 1.0f);
                 //heights[terX - (sizeX/2) + tempX,terZ - (sizeZ/2) + tempY] += 0.005f * (1f - proportion);
             }
  
