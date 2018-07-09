@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33871910088751062}
   - component: {fileID: 23680923415231020}
   m_Layer: 0
-  m_Name: TerraformRing
+  m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,4 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7fed624e30956478d3b03972bb16d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
+  moveSpeed: 4
+  pitch: 1
+  currentColor: {r: 1, g: 0, b: 0, a: 1}

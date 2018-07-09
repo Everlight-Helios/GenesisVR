@@ -1103,7 +1103,7 @@ GameObject:
   - component: {fileID: 846217521}
   - component: {fileID: 846217522}
   m_Layer: 0
-  m_Name: RingSpawnLocation
+  m_Name: RingSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1136,7 +1136,9 @@ MonoBehaviour:
   SIC: {fileID: 1509248711}
   ring: {fileID: 1434814967962082, guid: c23cdd01bf2a5cf45883d5062b2f5486, type: 2}
   spawnLocation: {fileID: 846217520}
-  speakingTimer: 0
+  highPitchColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  lowPitchColor: {r: 1, g: 0, b: 0, a: 1}
+  ringSpawningSpeed: 20
 --- !u!4 &934042332 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 972f8069f71309c4bb6ab7ff63db5056, type: 3}

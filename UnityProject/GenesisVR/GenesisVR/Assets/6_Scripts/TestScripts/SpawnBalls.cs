@@ -159,7 +159,7 @@ public class SpawnBalls : MonoBehaviour {
 					_currentRigidbody.AddForce(this.transform.forward * _forceAdd * _highestAmplitude);
 					
 					_highestAmplitude = 0;
-					SIC.NullifyClipData();
+					
 					
 				} else {
 					_currentBall.SetActive(false);

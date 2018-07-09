@@ -17,7 +17,7 @@ public class TerrainDeformer : MonoBehaviour {
 	{
 		xResolution = myTerrain.terrainData.heightmapWidth;
 		zResolution = myTerrain.terrainData.heightmapHeight;
-		print(xResolution + "--" + zResolution);
+		//print(xResolution + "--" + zResolution);
 		heights = myTerrain.terrainData.GetHeights(0,0,xResolution,zResolution);
 		startingHeights = myTerrain.terrainData.GetHeights(0,0,myTerrain.terrainData.heightmapWidth,myTerrain.terrainData.heightmapHeight);
 	}
@@ -30,12 +30,12 @@ public class TerrainDeformer : MonoBehaviour {
 	private void OnCollisionEnter(Collision collision)
 	{
 		//print("collided with: " + collision.gameObject.name);
-		RaiseTerrain(collision.transform.position, collision.transform.localScale);
+		RaiseTerrain(collision.transform.position, collision.transform.localScale, collision.gameObject.GetComponent<TerraformRing_Script>().pitch);
 
 		Destroy(collision.gameObject);
 	}
 
-	private void RaiseTerrain(Vector3 point, Vector3 size)
+	private void RaiseTerrain(Vector3 point, Vector3 size, float heightIncrease)
 	{
 		int terX =(int)((point.x / myTerrain.terrainData.size.x) * xResolution);
 		int sizeX = (int)((size.x / myTerrain.terrainData.size.x) * xResolution);
@@ -53,7 +53,7 @@ public class TerrainDeformer : MonoBehaviour {
                 float proportion = dist_to_target / maxDist;
 				//print(dist_to_target + " -> " + proportion);
  
-                height[tempX,tempY] += 0.0001f * (1.0f - proportion);
+                height[tempX,tempY] += 0.0005f * heightIncrease * (1.0f - proportion) * Random.Range(0.1f, 1.0f);
                 //heights[terX - (sizeX/2) + tempX,terZ - (sizeZ/2) + tempY] += 0.005f * (1f - proportion);
             }
  

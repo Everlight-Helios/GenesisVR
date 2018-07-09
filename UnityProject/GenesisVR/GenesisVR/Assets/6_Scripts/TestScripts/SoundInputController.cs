@@ -49,6 +49,8 @@ namespace SoundInput
 		[SerializeField]
 		public SoundSettings settings;
 
+		public float currentAudioTime = 0.0f;
+
 		[Header("Data")]
 		[SerializeField]
 		public InputData inputData;
@@ -64,6 +66,8 @@ namespace SoundInput
 
 		private ThreadStart ThreadFuncRef;
 		private Thread thread;
+		bool currentSound = false;
+		bool nullified = false;
 
 		void Awake()
 		{			
@@ -133,7 +137,8 @@ namespace SoundInput
 			if(SelectedDevice == null )
 				return;
 
-			audio.GetOutputData( data, 0 );			
+			audio.GetOutputData( data, 0 );	
+			currentAudioTime = audio.time;
 			
 			float sum  = 0f; // sum value
 			for(int i=0; i<data.Length; i++)
@@ -149,8 +154,8 @@ namespace SoundInput
 
 			if ( inputData.amplitude > maxVolume)
 			{
-				inputData.amplitude = 0;
-				inputData.relativeAmplitude = 0;
+				inputData.amplitude = maxVolume;
+				inputData.relativeAmplitude = maxVolume;
 			}
 
 			if (inputData.amplitude < settings.minVolume || sample == false) 
@@ -172,7 +177,20 @@ namespace SoundInput
 				inputData.frequency = analyser.lastFrequency();
 				inputData.frequency = inputData.frequency==0? previousFrequency : inputData.frequency;
 				inputData.relativeFrequency = ((inputData.frequency-settings.minFreq)/(settings.maxFreq-settings.minFreq));
+				inputData.relativeFrequency = Mathf.Clamp01(inputData.relativeFrequency);
 				inputData.toneLength += Time.deltaTime;
+			}
+
+			
+
+			if(audio.time >= 29.0f && nullified == false){
+				//print("Time to Nullify!");
+				this.NullifyClipData();
+				nullified = true;
+			}
+
+			if(audio.time <= 5.0f){
+				nullified = false;
 			}
 			
 			callback.Invoke(inputData);

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: BasicSound
   m_EditorClassIdentifier: 
   minFreq: 100
-  maxFreq: 300
+  maxFreq: 400
   minVolume: -20
   maxVolume: 20
   minY: -5

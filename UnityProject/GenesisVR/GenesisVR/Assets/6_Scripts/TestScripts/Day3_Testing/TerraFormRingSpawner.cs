@@ -8,11 +8,15 @@ public class TerraFormRingSpawner : MonoBehaviour {
 	public SoundInputController SIC;
 	public GameObject ring;
 	public GameObject spawnLocation;
+	public Color highPitchColor = Color.yellow;
+	public Color lowPitchColor = Color.red;
+	private Color currentColor;
 
 	private float _micPitch;
     private float _micAmplitude;
 	private bool _isSpeaking = false;
-	public float speakingTimer;
+	public int ringSpawningSpeed = 10;
+	private float speakingTimer;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +27,7 @@ public class TerraFormRingSpawner : MonoBehaviour {
 	void Update () {
 		
 		_micPitch =  SIC.inputData.relativeFrequency;
-        _micAmplitude = SIC.inputData.relativeAmplitude;
+        _micAmplitude = SIC.inputData.amp01;
 
 		if ((_micAmplitude > 0) && (!_isSpeaking)){
 			_isSpeaking = true;
@@ -33,9 +37,13 @@ public class TerraFormRingSpawner : MonoBehaviour {
 			SIC.NullifyClipData();
 		}
 		if (_isSpeaking){
+			currentColor = Color.Lerp(lowPitchColor, highPitchColor, _micPitch);
 			speakingTimer+=Time.deltaTime;
-			if(speakingTimer >= 0.1f){
-				GameObject.Instantiate(ring, spawnLocation.transform.position, this.transform.rotation);
+			if(speakingTimer >= 1.0f/ringSpawningSpeed){
+				GameObject currentRing = GameObject.Instantiate(ring, spawnLocation.transform.position, this.transform.rotation);
+				currentRing.transform.localScale = new Vector3(_micAmplitude*5, _micAmplitude*5, _micAmplitude*5);
+				currentRing.GetComponent<TerraformRing_Script>().pitch = _micPitch;
+				currentRing.GetComponent<TerraformRing_Script>().currentColor = currentColor;
 				speakingTimer = 0.0f;
 			}
 		}
